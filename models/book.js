@@ -2,10 +2,13 @@ const mongoose = require('mongoose');
 const studentSchema = require('./student').schema;
 
 const bookSchema = new mongoose.Schema({
-    bookName: String,
+    title: String,
     author: String,
     ISBN: Number,
-    numChecked: Number,
+    numChecked: {
+        type: Number,
+        default: 0
+    },
     // Only store the object ID into the array
     students: [{
         type: mongoose.Schema.Types.ObjectId, ref: 'Student'
