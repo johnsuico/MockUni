@@ -2,29 +2,32 @@ const router = require('express').Router();
 const Book = require('../models/book');
 
 // ROUTE:   /books/
-// DESC :   Return all books
+// DESC :   Get all books
+// REQ  :   GET
 router.route('/').get((req, res) => {
     Book.find({})
         .then( book => res.json(book));
 });
 
-// ROUTE:   /books/deleteAll
+// ROUTE:   /books/
 // DESC :   Delete all books from the database
-router.route('/deleteall').delete((req, res) => {
+// REQ  :   DELETE
+router.route('/').delete((req, res) => {
     Book.deleteMany({})
         .then(res.json({msg: 'All books deleted'}))
         .catch(err => res.send(err));
 })
 
-// ROUTE:   /books/addbook
+// ROUTE:   /books/
 // DESC :   Add a new book to database
-router.route('/addbook').post((req, res) => {
+// REQ  :   POST
+router.route('/').post((req, res) => {
     const { title, author, ISBN } = req.body;
 
     Book.findOne({ ISBN })
         .then( book => {
 
-            // If book is already in the database
+            // If the book is already in the database
             // 400 = Bad request
             if(book) return res.status(400).json({msg: 'Book is already in database'});
 
@@ -40,9 +43,10 @@ router.route('/addbook').post((req, res) => {
         })
 })
 
-// ROUTE:   /books/delete/:id
+// ROUTE:   /books/:id
 // DESC :   Delete a book from the database
-router.route('/delete/:id').delete((req, res) => {
+// REQ  :   DELETE
+router.route('/:id').delete((req, res) => {
     const id = req.params.id;
     
     Book.findByIdAndDelete(id)
