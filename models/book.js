@@ -1,0 +1,17 @@
+const mongoose = require('mongoose');
+const studentSchema = require('./student').schema;
+
+const bookSchema = new mongoose.Schema({
+    bookName: String,
+    author: String,
+    ISBN: Number,
+    numChecked: Number,
+    // Only store the object ID into the array
+    students: [{
+        type: mongoose.Schema.Types.ObjectId, ref: 'Student'
+    }]
+})
+
+const Book = mongoose.model('Book', bookSchema);
+
+module.exports = Book;
