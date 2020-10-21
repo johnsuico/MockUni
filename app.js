@@ -10,12 +10,6 @@ app.use(express.json());
 // Needed to connect to frontend
 app.use(cors());
 
-// ROUTES
-
-// Book Routes
-const bookRouter = require('./routes/books');
-app.use('/books', bookRouter);
-
 // Port number to be used to access the backend
 // Locally: localhost:5000
 const PORT = 5000 | process.env.PORT;
@@ -31,6 +25,16 @@ mongoose.connection.on('connected', () => {
 
 // Unsuccessful Connection Message
 mongoose.connection.on('error', console.error.bind(console, 'Connection error: '));
+
+// ROUTES
+
+// Book Routes
+const bookRouter = require('./routes/books');
+app.use('/books', bookRouter);
+
+// Class Routes
+const classRouter = require('./routes/classes');
+app.use('/classes', classRouter);
 
 // Home Route
 app.get('/', (req, res) => {
