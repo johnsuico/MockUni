@@ -7,7 +7,10 @@ import {
 import './App.css';
 
 // Components
-import Dashboard from './components/Dashboard/Dashbord';
+import Dashboard from './components/Dashboard/Dashboard';
+import Students from './components/Students/Students';
+import Classes from './components/Classes/Classes';
+import Books from './components/Books/Books';
 
 function App() {
   return (
@@ -16,6 +19,15 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Dashboard />
+          </Route>
+          <Route path="/students">
+            <Students />
+          </Route>
+          <Route path="/classes">
+            <Classes />
+          </Route>
+          <Route path="/books">
+            <Books />
           </Route>
         </Switch>
       </Router>

@@ -3,3 +3,24 @@
 .dashboard {
     display: flex; /* Do not forget to put this in every component container*/
 }
+
+/* Start DASHBOARD-CONTAINER Styling */
+.dashboard-container {
+  display: flex;
+  width: 100vw;
+}
+/* End DASHBOARD-CONTAINER Styling */
+
+/* Start DASHBOARD-SIDEONE Styling */
+.dashboard-sideOne {
+  border-right: 1px solid var(--divider-color);
+  flex: 1;
+}
+/* End DASHBOARD-SIDEONE Styling */
+
+/* Start DASHBOARD-SIDETWO Styling */
+.dashboard-sideTwo {
+  border-left: 2px solid var(--divider-color);
+  flex: 1;
+}
+/* End DASHBOARD-SIDETWO Styling */

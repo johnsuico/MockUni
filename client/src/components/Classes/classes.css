@@ -1,0 +1,25 @@
+/* Always need to apply flex to the main container of the component */
+/* This ensure that the sidebar will be to the left of the page */
+.classes {
+  display: flex; /* Do not forget to put this in every component container*/
+}
+
+/* Start CLASSES-CONTAINER Styling */
+.classes-container {
+  display: flex;
+  width: 100vw;
+}
+/* End CLASSES-CONTAINER StyCLASSES
+/* Start CLASSES-SIDEONE Styling */
+.classes-sideOne {
+  border-right: 1px solid var(--divider-color);
+  flex: 1;
+}
+/* End CLASSES-SIDEONE Styling */
+
+/* Start CLASSES-SIDETWO Styling */
+.classes-sideTwo {
+  border-left: 2px solid var(--divider-color);
+  flex: 1;
+}
+/* End CLASSES-SIDETWO Styling */

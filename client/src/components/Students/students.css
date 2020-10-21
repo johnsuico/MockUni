@@ -1,0 +1,26 @@
+/* Always need to apply flex to the main container of the component */
+/* This ensure that the sidebar will be to the left of the page */
+.students {
+  display: flex; /* Do not forget to put this in every component container*/
+}
+
+/* Start STUDENTS-CONTAINER Styling */
+.students-container {
+  display: flex;
+  width: 100vw;
+}
+/* End STUDENTS-CONTAINER Styling */
+
+/* Start STUDENTS-SIDEONE Styling */
+.students-sideOne {
+  border-right: 1px solid var(--divider-color);
+  flex: 1;
+}
+/* End STUDENTS-SIDEONE Styling */
+
+/* Start STUDENTS-SIDETWO Styling */
+.students-sideTwo {
+  border-left: 2px solid var(--divider-color);
+  flex: 1;
+}
+/* End STUDENTS-SIDETWO Styling */

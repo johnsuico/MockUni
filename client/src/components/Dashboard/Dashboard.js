@@ -11,8 +11,15 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <Sidebar active="dashboard"/>
-      <h1>Dashboard Component</h1>
-    </div>
+      <div className="dashboard-container">
+       <div className="dashboard-sideOne">
+            <h1>Dashboard Side One</h1>
+        </div>
+        <div className="dashboard-sideTwo">
+            <h1>Dashboard Side Two</h1>
+        </div>
+      </div>
+    </div> 
   )
 }
 
