@@ -10,9 +10,16 @@
 /* CSS Vars */
 :root {
   --background-color: #F8F8FF;
+
   --main-color: #5465FF;
+  --main-color-hover: #374bfd;
+
   --button-color: #7D8AFF;
-  --card-color: #DEE1FF;
+  --button-color-hover: #c2c8ff;
+
   --inactive-color: #909090;
+  --inactive-color-hover: #696969;
+ 
+  --card-color: #DEE1FF;
   --divider-color: #EFEFEF;
 }
