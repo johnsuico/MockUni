@@ -36,6 +36,10 @@ app.use('/books', bookRouter);
 const classRouter = require('./routes/classes');
 app.use('/classes', classRouter);
 
+// Student Routes
+const studentRouter = require('./routes/students');
+app.use('/students', studentRouter);
+
 // Home Route
 app.get('/', (req, res) => {
     res.send('You made it to the API');    
