@@ -4,7 +4,14 @@ const studentSchema = require('./student').schema;
 const classSchema = new mongoose.Schema({
     className: String,
     instructor: String,
-    numStudents: Number,
+    classID: {
+        type: Number,
+        unique: true
+    },
+    numStudents: {
+        type: Number,
+        default: 0
+    },
     // Only store the object ID into the array
     students: [{
         type: mongoose.Schema.Types.ObjectId, ref: 'Student'
