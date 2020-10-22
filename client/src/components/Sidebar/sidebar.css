@@ -7,116 +7,115 @@
 }
 
 /* Start LOGO-CONTAINER Styling */
-.logo-container {
-  display: flex;
-  align-items: center;
-  margin-left: 23%;
-  margin-top: 30%;
-}
+  .logo-container {
+    display: flex;
+    align-items: center;
+    height: 20%;
+    justify-content: center;
+  }
 
-.logo-pic {
-  height: 36px;
-  width: 36px;
-}
+  .logo-pic {
+    height: 36px;
+    width: 36px;
+  }
 
-.logo-name {
-  font-weight: 800;
-  font-size: 24px;
-  margin-left: 15px;
-}
+  .logo-name {
+    font-weight: 800;
+    font-size: 24px;
+    margin-left: 15px;
+  }
 /* End LOGO-CONTAINER Styling */
 
 /* Start ADMIN-CONTAINER Styling */
-.admin-container {
-  display: flex;
-  flex-direction: column;
-  margin-left: 23%;
-  margin-top: 25%;
-}
+  .admin-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 23%;
+  }
 
-.admin-title {
-    font-weight: 800;
-}
+  .admin-title {
+      font-weight: 800;
+  }
 
-.admin-name {
-    font-weight: 400;
-    color: var(--inactive-color);
-    font-size: 18px;
-    margin-top: 10px;
-}
+  .admin-name {
+      font-weight: 400;
+      color: var(--inactive-color);
+      font-size: 18px;
+      margin-top: 5%;
+  }
 /* End ADMIN-CONTAINER Styling */
 
 /* Start SIDEBAR-NAV-CONTAINER Styling*/
-    .sidebar-nav-container {
-        margin-top: 25%;
-        margin-left: 23%;
-        display: flex;
-        flex-direction: column;
-    }
+  .sidebar-nav-container {
+      padding-top: 25%;
+      padding-left: 23%;
+      display: flex;
+      flex-direction: column;
+  }
 
-    .sidebar-nav-item {
-        display: flex;
-        margin-bottom: 30px;
-        color: var(--inactive-color);
-        align-items: center;
-        text-decoration: none;
-    }
+  .sidebar-nav-item {
+      display: flex;
+      margin-bottom: 30px;
+      color: var(--inactive-color);
+      align-items: center;
+      text-decoration: none;
+  }
 
-    .sidebar-nav-item:hover {
-        color: var(--inactive-color-hover);
-    }
+  .sidebar-nav-item:hover {
+      color: var(--inactive-color-hover);
+  }
 
-    .sidebar-nav-item-active {
-        display: flex;
-        margin-bottom: 30px;
-        color: var(--main-color);
-        align-items: center;
-        text-decoration: none;
-    }
+  .sidebar-nav-item-active {
+      display: flex;
+      margin-bottom: 30px;
+      color: var(--main-color);
+      align-items: center;
+      text-decoration: none;
+  }
 
-    .sidebar-nav-item-active:hover {
-        color: var(--main-color-hover);
-    }
+  .sidebar-nav-item-active:hover {
+      color: var(--main-color-hover);
+  }
 
-    .sidebar-nav-item:last-child {
-        margin-bottom: 0;
-    }
+  .sidebar-nav-item:last-child {
+      margin-bottom: 0;
+  }
 
-    .sidebar-nav-icon {
-        height: 36px;
-        width: 36px;
-    }
+  .sidebar-nav-icon {
+      height: 36px;
+      width: 36px;
+  }
 
-    .sidebar-nav-title {
-        text-decoration: none;
-        font-size: 20px;
-        margin-left: 20px;
-        width: 45%;
-        text-align: center;
-    }
+  .sidebar-nav-title {
+      text-decoration: none;
+      font-size: 20px;
+      margin-left: 20px;
+      width: 45%;
+      text-align: center;
+  }
 /* End SIDEBAR-NAV-CONTAINER Styling*/
 
 /* Start LOGOUT-CONTAINER Styling */
-.logout-container {
-    margin-left: 23%;
-    margin-top: auto;
-    padding-bottom: 10%;
-    display: flex;
-    color: var(--inactive-color);
-    align-items: center;
-}
+  .logout-container {
+      margin-left: 23%;
+      margin-top: auto;
+      padding-bottom: 10%;
+      display: flex;
+      color: var(--inactive-color);
+      align-items: center;
+  }
 
-.logout-container:hover {
-    color: var(--inactive-color-hover);
-}
+  .logout-container:hover {
+      color: var(--inactive-color-hover);
+  }
 
-.logout-icon {
-    height: 30px;
-    width: 30px;
-}
+  .logout-icon {
+      height: 30px;
+      width: 30px;
+  }
 
-.logout-text {
-    font-size: 20px;
-    margin-left: 20px;
-}
+  .logout-text {
+      font-size: 20px;
+      margin-left: 20px;
+  }
 /* End LOGOUT-CONTAINER Styling */
