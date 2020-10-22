@@ -12,154 +12,49 @@
   }
 /* End DASHBOARD-CONTAINER Styling */
 
-/*  Start SIDEONE Styling */
-  .dashboard-sideOne {
-    flex: 1;
-  }
-
-  .sideOne-header {
-    height: 20%;
-    display: flex;
-    align-items: center;
-  }
-
-  .sideOne-header h2 {
-    margin-left: 10%;
-  }
-
-  .sideOne-container {
-    border-right: 1.5px solid var(--divider-color);
-    display: flex;
-    flex-direction: column;
-    height: 80%;
-  }
-/*  End SIDEONE Styling */
-
-/* Start OVERVIEW Styling */
-  .overview-container {
-    margin: 0 10%;
-    padding: 0;
-  }
-
-  .overview-options {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5%;
-  }
-
-  .overview-options button {
-    outline: none;
-    font-size: 16px;
-  }
-
-  .overview-item-active {
-    font-weight: 400;
-    font-size: 16px;
-    color: var(--main-color);
-    background-color: transparent;
-    border: none;
-    padding-bottom: 5px;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-  }
-
-  .overview-item-active:hover {
-    color: var(--main-color-hover);
-    border-bottom: 2px solid var(--main-color-hover);
-  }
-
-  .overview-item-inactive {
-    font-weight: 400;
-    font-size: 16px;
-    color: var(--inactive-color);
-    background-color: transparent;
-    border: none;
-    padding-bottom: 5px;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-  }
-
-  .overview-item-inactive:hover {
-    color: var(--inactive-color-hover);
-    border-bottom: 2px solid var(--inactive-color);
-  }
-
-  .overview-card-container {
-    background-color: var(--card-color);
-    border-radius: 10px;
-  }
-
-  .overview-card {
-    display: flex;
-    align-items: center;
-    padding: 10% 0;
-    margin-top: 10%;
-    margin-bottom: 10%;
-  }
-
-  .overview-card-icon {
-    height: 92px;
-    flex: 1;
-    margin-left: 5%;
-  }
-
-  .overview-card-info {
-    flex: 1;
-    text-align: center;
-    margin-right: 5%;
-  }
-
-  .card-title {
-    font-weight: 800;
-    font-size: 20px;
-  }
-
-  .card-number {
-    color: var(--main-color);
-    margin-top: 3%;
-    font-size: 36px;
-  }
-
-  .dashboard-link {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-  }
-
-  .dashboard-button {
-    background-color: var(--button-color);
-    text-align: center;
-    padding: 2.5% 0;
-    border-radius: 10px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
-
-  .dashboard-button:hover {
-    background-color: var(--button-color-hover);
-  }
-
-  .dashboard-button:focus {
-    outline: none;
-    box-shadow: none;
-  }
-
-  .quick-functions-container {
-    border-top: 1.5px solid var(--divider-color);
-    margin: 0 10%;
-    height: 30%;
-  }
-
-  .quick-title {
-    width: 100%;
-    text-align: center;
-    margin-top: 5%;
-  }
-/* End OVERVIEW Styling */
-
 /* Start DASHBOARD-SIDETWO Styling */
 .dashboard-sideTwo {
-  /* border-left: 2px solid var(--divider-color); */
   flex: 1;
 }
+
+.sideTwo-header {
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.sideTwo-header h2 {
+  margin-left: 10%;
+  font-weight: 800;
+}
+
+.sideTwo-container {
+  border-left: 1.5px solid var(--diver-color);
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
 /* End DASHBOARD-SIDETWO Styling */
+
+/* Start QUICK-ANALYTICS Styling */
+.quick-analytics-container {
+  margin: 0 10%;
+  padding: 0;
+}
+
+.quick-analytics-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--inactive-color);
+  margin-top: 5%;
+}
+/* End QUICK-ANALYTICS Styling */
+
+/* Start BARGRAPH Styling */
+.barGraph {
+  background-color: var(--card-color);
+  border-radius: 10px;
+  margin: 5% 0;
+  padding: 2%;
+}
+/* End BARGRAPH Styling */

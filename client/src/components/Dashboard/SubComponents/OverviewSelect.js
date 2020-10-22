@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Bar } from 'react-chartjs-2';
 
 // Icon Imports
 import { FaUserGraduate } from "react-icons/fa";

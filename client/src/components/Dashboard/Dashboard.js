@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 // Import CSS File
 import './dashboard.css';
+import './dashboard-sideOne.css';
 
 // Import Sidebar Component
 import Sidebar from '../Sidebar/Sidebar';
 import OverviewSelect from './SubComponents/OverviewSelect';
+import Bargraph from './SubComponents/Bargraph';
 
 function Dashboard() {
 
@@ -67,7 +69,24 @@ function Dashboard() {
 
         {/* Dashboard Side Two */}
         <div className="dashboard-sideTwo">
-          <h1>Dashboard Side Two</h1>
+          <div className="sideTwo-header">
+            <h2>Mock University Name</h2>
+          </div>
+          <div className="sideTwo-container">
+            <div className="quick-analytics-container">
+              <h2 className="quick-analytics-title">Quick Analytics</h2>
+              <h3 className="quick-analytics-description">A quick overview of class enrollment and book demand.</h3>
+
+              <div className="barGraph">
+                <Bargraph selected='Classes'/>
+              </div>
+
+              <div className="barGraph">
+                <Bargraph selected='Books'/>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
 
