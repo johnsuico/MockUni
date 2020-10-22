@@ -1,4 +1,3 @@
-/*  Start SIDEONE Styling */
 .dashboard-sideOne {
   flex: 1;
 }
@@ -20,9 +19,7 @@
   flex-direction: column;
   height: 80%;
 }
-/*  End SIDEONE Styling */
 
-/* Start OVERVIEW Styling */
 .overview-container {
   margin: 0 10%;
   padding: 0;

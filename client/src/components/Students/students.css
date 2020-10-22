@@ -4,43 +4,8 @@
   display: flex; /* Do not forget to put this in every component container*/
 }
 
-/* Start STUDENTS-CONTAINER Styling */
-.students-container {
+.student-container {
   display: flex;
   width: 100vw;
+  height: 100vh;
 }
-/* End STUDENTS-CONTAINER Styling */
-
-/* Start STUDENTS-SIDEONE Styling */
-.students-sideOne {
-  border-right: 1px solid var(--divider-color);
-  flex: 1;
-}
-/* End STUDENTS-SIDEONE Styling */
-
-/* Start STUDENTS-SIDEONE-HEADER Styling */
-.students-sideOne-header {
-  border: 1px solid blue;
-  height: 18%;
-  display: flex;
-  align-items: center;
-}
-
-.students-sideOne-header h2 {
-  margin-left: 5%;
-}
-/* End STUDENTS-SIDEONE-HEADER Styling */
-
-/* Start STUDENTS-SIDEONE-CONTENT Styling */
-.students-sideOne-content {
-  border: 1px solid red;
-  height: 82%;
-}
-/* End STUDENTS-SIDEONE-CONTENT Styling */
-
-/* Start STUDENTS-SIDETWO Styling */
-.students-sideTwo {
-  border-left: 2px solid var(--divider-color);
-  flex: 1;
-}
-/* End STUDENTS-SIDETWO Styling */
