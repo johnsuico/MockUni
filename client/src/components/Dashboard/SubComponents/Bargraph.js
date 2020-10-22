@@ -19,7 +19,7 @@ function Bargraph(props) {
           setData(response.data)
         })
     }
-  })
+  }, [])
 
   const classState = {
     labels: data.map(labels => labels.className),

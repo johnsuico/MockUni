@@ -10,7 +10,7 @@ function StudentSideOne() {
   useEffect(() => {
     Axios.get('http://localhost:5000/students')
       .then(response => setStudents(response.data));
-  })
+  }, [])
 
   return(
     <div className="sideOne-container">
