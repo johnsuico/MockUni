@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Bar } from 'react-chartjs-2';
 
 // Icon Imports
 import { FaUserGraduate } from "react-icons/fa";
@@ -46,7 +47,7 @@ function OverviewStudent(props) {
             </div>
           </div>
         </div>
-        <Link to='/students' className="dashboard-link">
+        <Link to={'/' + props.selected} className="dashboard-link">
           <div className="dashboard-button">
             View {props.selected}
           </div>
@@ -55,17 +56,18 @@ function OverviewStudent(props) {
 
       <div className="quick-functions-container">
         <h2 className="quick-title">{props.singular} Quick Functions</h2>
-        <Link to='/students' className="dashboard-link">
+        <Link to={'/' + props.selected} className="dashboard-link">
           <div className="dashboard-button">
             Add {props.selected}
           </div>
         </Link>
-        <Link to='/students' className="dashboard-link">
+        <Link to={'/' + props.selected} className="dashboard-link">
           <div className="dashboard-button">
             {props.singular} Analytics
           </div>
         </Link>
       </div>
+
     </div>
   )
 }

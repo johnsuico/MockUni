@@ -16,11 +16,12 @@ function Dashboard() {
 
   function clickStudent() {
     setOverview('Students');
-    setSingular('Student')
+    setSingular('Student');
   }
   function clickClasses() {
     setOverview('Classes');
     setSingular('Class');
+
   }
   function clickBooks() {
     setOverview('Books');
@@ -31,7 +32,10 @@ function Dashboard() {
     <div className="dashboard">
       <Sidebar active="dashboard"/>
 
+
       <div className="dashboard-container">
+
+        {/* Dashboard Side One */}
         <div className="dashboard-sideOne">
           <div className="sideOne-header">
             <h2>Hello, Admin Name Here</h2>
@@ -60,6 +64,8 @@ function Dashboard() {
             <OverviewSelect selected={overview} singular={singular}/>
           </div>
         </div>
+
+        {/* Dashboard Side Two */}
         <div className="dashboard-sideTwo">
           <h1>Dashboard Side Two</h1>
         </div>
