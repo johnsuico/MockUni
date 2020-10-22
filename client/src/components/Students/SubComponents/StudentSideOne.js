@@ -3,14 +3,23 @@ import Axios from 'axios';
 
 import TableRow from './TableRow'
 
-function StudentSideOne() {
+function StudentSideOne(props) {
 
   const [students, setStudents] = useState([]);
+  const [selectStudent, setSelectStudent] = useState([]);
 
   useEffect(() => {
     Axios.get('http://localhost:5000/students')
-      .then(response => setStudents(response.data));
+      .then(response => {
+        setStudents(response.data)
+        setSelectStudent(response.data[0].SID)
+      });
   }, [])
+
+  function onClick(selected) {
+    setSelectStudent(selected);
+    props.getSelected(selected);
+  }
 
   return(
     <div className="sideOne-container">
@@ -34,9 +43,17 @@ function StudentSideOne() {
           <th className="tableHeader">Last Name</th>
           <th className="tableHeader">Student ID</th>
         </tr>
-        {students.map((student, index) => (
-          <TableRow index={index+1} firstName={student.firstName} lastName={student.lastName} SID={student.SID} />
-        ))}
+        <tbody>
+          {students.map((student, index) => (
+            <TableRow 
+              index={index+1} 
+              firstName={student.firstName} 
+              lastName={student.lastName} 
+              SID={student.SID} key={student.SID} 
+              onClickParent={onClick} 
+              selected={selectStudent}/>
+          ))}
+        </tbody>
       </table>
     
     </div>
