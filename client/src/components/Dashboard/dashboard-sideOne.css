@@ -76,7 +76,7 @@
 .overview-card {
   display: flex;
   align-items: center;
-  padding: 10% 0;
+  padding: 5% 0;
   margin-top: 10%;
   margin-bottom: 10%;
 }
@@ -85,6 +85,7 @@
   height: 92px;
   flex: 1;
   margin-left: 5%;
+
 }
 
 .overview-card-info {

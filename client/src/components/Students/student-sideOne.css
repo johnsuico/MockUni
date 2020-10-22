@@ -54,6 +54,19 @@ table {
   font-weight: 600;
 }
 
+.tableRow {
+  color: black;
+}
+
+.tableRow-selected {
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.tableRow-selected:hover {
+  color: var(--main-color-hover);
+}
+
 .tableRow:hover {
   color: var(--main-color);
   cursor: pointer;
