@@ -9,6 +9,29 @@ import { FaBook } from "react-icons/fa";
 
 function OverviewStudent(props) {
 
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    if (props.selected === 'Students') {
+      Axios.get('http://localhost:5000/students')
+        .then( response => {
+          setData(response.data)
+        })
+    }
+    if (props.selected === 'Classes') {
+      Axios.get('http://localhost:5000/classes')
+        .then( response => {
+          setData(response.data)
+        })
+    }
+    if (props.selected === 'Books') {
+      Axios.get('http://localhost:5000/books')
+        .then( response => {
+          setData(response.data)
+        })
+    }
+  }, [props.selected])
+
   return(
     <div>
       <div className="overview-container">
@@ -19,7 +42,7 @@ function OverviewStudent(props) {
             {props.selected === 'Books' ? <FaBook className="overview-card-icon"/> : null}
             <div className="overview-card-info">
               <h4 className="card-title">Total {props.selected}</h4>
-              <h4 className="card-number">6</h4>
+              <h4 className="card-number">{data.length}</h4>
             </div>
           </div>
         </div>
