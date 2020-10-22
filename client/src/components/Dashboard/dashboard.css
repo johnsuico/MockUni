@@ -13,14 +13,147 @@
 
 /* Start DASHBOARD-SIDEONE Styling */
 .dashboard-sideOne {
-  border-right: 1px solid var(--divider-color);
   flex: 1;
 }
 /* End DASHBOARD-SIDEONE Styling */
 
+.sideOne-header {
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.sideOne-header h2 {
+  margin-left: 10%;
+}
+
+.sideOne-container {
+  border-right: 1.5px solid var(--divider-color);
+  height: 80%;
+}
+
+.overview-container {
+  margin: 0 10%;
+}
+
+.overview-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.overview-options button {
+  outline: none;
+}
+
+.overview-item-active {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--main-color);
+  background-color: transparent;
+  border: none;
+  padding-bottom: 5px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.overview-item-active:hover {
+  color: var(--main-color-hover);
+  border-bottom: 2px solid var(--main-color-hover);
+}
+
+.overview-item-inactive {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--inactive-color);
+  background-color: transparent;
+  border: none;
+  padding-bottom: 5px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.overview-item-inactive:hover {
+  color: var(--inactive-color-hover);
+  border-bottom: 2px solid var(--inactive-color);
+}
+
+.overview-card-container {
+  background-color: var(--card-color);
+  border-radius: 10px;
+}
+
+.overview-card {
+  display: flex;
+  align-items: center;
+  padding: 10% 0;
+  margin-top: 15%;
+  margin-bottom: 10%;
+}
+
+.overview-card-icon {
+  height: 92px;
+  flex: 1;
+  margin-left: 5%;
+}
+
+.overview-card-info {
+  flex: 1;
+  text-align: center;
+  margin-right: 5%;
+}
+
+.overview-card-info h4 {
+  font-weight: 800;
+}
+
+.card-title {
+  font-size: 20px;
+}
+
+.card-number {
+  color: var(--main-color);
+  font-size: 36px;
+}
+
+.dashboard-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.dashboard-button {
+  background-color: var(--button-color);
+  text-align: center;
+  padding: 2.5% 0;
+  border-radius: 10px;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.dashboard-button:hover {
+  background-color: var(--button-color-hover);
+}
+
+.dashboard-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.quick-functions-container {
+  border-top: 1.5px solid var(--divider-color);
+  margin: 0 10%;
+}
+
+.quick-title {
+  width: 100%;
+  text-align: center;
+  margin: 5% 0;
+}
+
 /* Start DASHBOARD-SIDETWO Styling */
 .dashboard-sideTwo {
-  border-left: 2px solid var(--divider-color);
+  /* border-left: 2px solid var(--divider-color); */
   flex: 1;
 }
 /* End DASHBOARD-SIDETWO Styling */
