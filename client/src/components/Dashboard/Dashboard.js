@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import Axios from 'axios';
-import { Link } from 'react-router-dom';
 
 // Import CSS File
 import './dashboard.css';
 import './dashboard-sideOne.css';
+import './dashboard-sideTwo.css';
 
 // Import Sidebar Component
 import Sidebar from '../Sidebar/Sidebar';
