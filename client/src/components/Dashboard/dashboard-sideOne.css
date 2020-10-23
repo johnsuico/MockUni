@@ -76,7 +76,7 @@
 .overview-card {
   display: flex;
   align-items: center;
-  padding: 5% 0;
+  padding: 10% 0;
   margin-top: 10%;
   margin-bottom: 10%;
   background-color: var(--card-color);
@@ -99,7 +99,7 @@
 
 .card-title {
   font-weight: 800;
-  font-size: 20px;
+  font-size: 24px;
   background-color: inherit;
 }
 
