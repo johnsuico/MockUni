@@ -1,6 +1,8 @@
 # MockUni
 CMPE172 Project. Mock Uni is a university and library management system that allows an admin user to view, add, edit, and delete students, books, and classes.
 
+![Dashboard Inprogress Screenshot](/Demo/dash-inprogress.PNG)
+
 ## Requirements
 - [Download Node](https://nodejs.org/en/download/)
 - [Download Git](https://git-scm.com/downloads)
