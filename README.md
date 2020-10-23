@@ -5,7 +5,7 @@ CMPE172 Project. Mock Uni is a university and library management system that all
 [Download Node](https://nodejs.org/en/download/)
 [Download Git](https://git-scm.com/downloads)
 
-** Cloning and Setting Up the Repo **
+**Cloning and Setting Up the Repo**
 The following instructions will place the repo on your desktop. Feel free to put the repo anywhere you want.
 
 - Windows
@@ -35,5 +35,5 @@ The following instructions will place the repo on your desktop. Feel free to put
 
     ``` npm run dev ```
   - OR start the application in production mode
-  
+
     ``` npm start ```
