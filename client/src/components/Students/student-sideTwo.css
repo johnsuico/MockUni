@@ -1,0 +1,23 @@
+.students-sideTwo {
+  flex: 1;
+}
+
+.student-indepth-container {
+  margin: 0 10%;
+  padding: 0;
+}
+
+.header-container {
+  border-bottom: 3px solid var(--divider-color);
+  padding-bottom: 10px;
+}
+
+.student-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.student-name {
+  color: var(--main-color);
+}

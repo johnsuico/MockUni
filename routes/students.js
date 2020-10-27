@@ -46,6 +46,17 @@ router.route('/').post((req, res) => {
 });
 
 // ROUTE:   /students/:id
+// DESC :   Get a single student
+// REQ  :   GET
+router.route('/:id').get((req, res) => {
+  const id = req.params.id;
+
+  Student.findById(id)
+    .then(student => res.json(student))
+    .catch(err => res.send(err));
+})
+
+// ROUTE:   /students/:id
 // DESC :   Delete a student from the database
 // REQ  :   DELETE
 router.route('/:id').delete((req, res) => {

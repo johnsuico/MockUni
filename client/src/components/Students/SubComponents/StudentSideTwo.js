@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Axios from 'axios';
+
+import StudentInfo from './StudentInfo';
 
 function StudentSideTwo(props) {
+
   return (
-    <div>
-      <h1>{props.selected}</h1>
+    <div className="sideTwo-container">
+      <StudentInfo selected={props.selected}/>
     </div>
   )
 }

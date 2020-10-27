@@ -7,12 +7,13 @@ function StudentSideOne(props) {
 
   const [students, setStudents] = useState([]);
   const [selectStudent, setSelectStudent] = useState([]);
+  const [addStudent, setAddStudent] = useState(false);
 
   useEffect(() => {
     Axios.get('http://localhost:5000/students')
       .then(response => {
         setStudents(response.data)
-        setSelectStudent(response.data[0].SID)
+        setSelectStudent(response.data[0]._id)
       });
   }, [])
 
@@ -21,13 +22,18 @@ function StudentSideOne(props) {
     props.getSelected(selected);
   }
 
+  function toggleAdd() {
+    setAddStudent(!addStudent);
+    props.getToggle(addStudent);
+  }
+
   return(
     <div className="sideOne-container">
       <div className="student-content-container">
         <div className="content-header-container">
           <div className="content-header-title-container">
             <h2>List of Students</h2>
-            <button>Add Student</button>
+            <button onClick={toggleAdd}>Add Student</button>
           </div>
           <div className="content-header-desc">
             <h3>Click on a student for more information</h3>
@@ -37,19 +43,23 @@ function StudentSideOne(props) {
       </div>
 
       <table>
-        <tr>
-          <th className="tableHeader">#</th>
-          <th className="tableHeader">First Name</th>
-          <th className="tableHeader">Last Name</th>
-          <th className="tableHeader">Student ID</th>
-        </tr>
+        <thead>
+          <tr>
+            <th className="tableHeader">#</th>
+            <th className="tableHeader">First Name</th>
+            <th className="tableHeader">Last Name</th>
+            <th className="tableHeader">Student ID</th>
+          </tr>
+        </thead>
         <tbody>
           {students.map((student, index) => (
             <TableRow 
               index={index+1} 
               firstName={student.firstName} 
               lastName={student.lastName} 
-              SID={student.SID} key={student.SID} 
+              SID={student.SID} 
+              ID={student._id}
+              key={student._id} 
               onClickParent={onClick} 
               selected={selectStudent}/>
           ))}
