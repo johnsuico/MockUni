@@ -45,7 +45,7 @@
   flex: 1;
 }
 
-table {
+.student-list-table {
   margin: 5% 10%;
   text-align: center;
 }

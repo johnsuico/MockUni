@@ -21,3 +21,27 @@
 .student-name {
   color: var(--main-color);
 }
+
+.student-classes-container {
+  border: 1px solid red;
+  margin-top: 10px;
+}
+
+.section-title {
+  margin-bottom: 10px;
+}
+
+.class-list-table {
+  width: 100%;
+  text-align: center;
+}
+
+.class-table-headers {
+  font-weight: 600;
+}
+
+.class-table-body {
+  width: 100%;
+  border: 1px solid blue;
+}
+

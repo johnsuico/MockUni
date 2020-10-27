@@ -42,7 +42,7 @@ function StudentSideOne(props) {
         </div>
       </div>
 
-      <table>
+      <table className="student-list-table">
         <thead>
           <tr>
             <th className="tableHeader">#</th>
