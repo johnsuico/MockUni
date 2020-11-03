@@ -46,9 +46,9 @@ function ClassRow(props) {
   if (props.selected === "books") {
     return (
       <tr className="classData-row">
-        <td className="classData">Book</td>
-        <td className="classData">{classes.instructor}</td>
-        <td className="classData">{classes.classID}</td>
+        <td className="classData">{books.title}</td>
+        <td className="classData">{books.author}</td>
+        <td className="classData">{books.ISBN}</td>
       </tr>
     )
   }

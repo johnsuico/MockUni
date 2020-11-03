@@ -44,6 +44,16 @@ router.route('/').post((req, res) => {
 })
 
 // ROUTE:   /books/:id
+// DESC :   Get a book from the database
+// REQ  :   GET
+router.route('/:id').get((req, res) => {
+  const id = req.params.id;
+  
+  Book.findById(id)
+      .then(book => res.json(book));
+});
+
+// ROUTE:   /books/:id
 // DESC :   Delete a book from the database
 // REQ  :   DELETE
 router.route('/:id').delete((req, res) => {
