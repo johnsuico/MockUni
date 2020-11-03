@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const studentSchema = require('./student').schema;
 
 const classSchema = new mongoose.Schema({
-    className: String,
+    classTitle: String,
     instructor: String,
     classID: {
         type: Number,

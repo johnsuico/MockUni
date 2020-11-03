@@ -61,34 +61,76 @@ router.route('/:id').get((req, res) => {
 // DESC :   Update student object to add class to array
 // REQ  :   PUT
 router.route('/:id/class').put((req, res) => {
-  const id = req.params.id;
+  // const id = req.params.id;
 
+  // const classID = req.body.classID;
+
+  // Student.findByIdAndUpdate(id)
+  //   .then(student => {
+
+  //     student.classes.map(classes => {
+  //       if (classes == classID) {
+  //         res.json('Class is already registered');
+  //         console.log('Class registered')
+  //       } else {
+  //         student.classes.push(classID);
+  //         student.save();
+  //         res.json(student)
+
+  //         Classes.findByIdAndUpdate(classID, {$inc : {'numStudents': 1}})
+  //           .then(classes => {
+  //             // classes.numStudents = 0;
+  //             classes.students.push(id);
+  //             classes.save();
+  //             console.log(classes);
+  //           })
+  //       }
+
+  //   })
+
+  // });
+
+  const id = req.params.id;
   const classID = req.body.classID;
 
   Student.findByIdAndUpdate(id)
     .then(student => {
+      if (student.classes.length === 0) {
+        student.classes.push(classID);
+        student.save();
+        res.json(student);
 
-      student.classes.map(classes => {
-        if (classes == classID) {
-          res.json('Class is already registered');
-        } else {
-          student.classes.push(classID);
-          student.save();
-          res.json(student)
+        Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
+        .then(newClass => {
+          // newClass.numStudents = 0;
+          newClass.students.push(id);
+          newClass.save();
+          console.log(newClass);
+        })
 
-          Classes.findByIdAndUpdate(classID, {$inc : {'numStudents': 1}})
-            .then(classes => {
-              // classes.numStudents = 0;
-              classes.students.push(id);
-              classes.save();
-              console.log(classes);
-            })
-        }
-      })
+      } else {
+
+        student.classes.map(classes => {
+          if (classes == classID) {
+            res.json('Class is already registered');
+          } else {
+            student.classes.push(classID);
+            student.save();
+            res.json(student)
+  
+            Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
+              .then(newClass => {
+                // newClass.numStudents = 0;
+                newClass.students.push(id);
+                newClass.save();
+                console.log(newClass);
+              })
+          }
+        })
+
+      }
 
     });
-
-
 });
 
 // ROUTE:   /students/:id

@@ -22,7 +22,7 @@ router.route('/').delete((req, res) => {
 // DESC :   Add a new book to database
 // REQ  :   POST
 router.route('/').post((req, res) => {
-    const { className, instructor, classID } = req.body;
+    const { classTitle, instructor, classID } = req.body;
 
     Classes.findOne({ classID })
         .then( classes => {
@@ -32,7 +32,7 @@ router.route('/').post((req, res) => {
             if(classes) return res.status(400).json({msg: 'Class is already in database'});
 
             // Create New Class
-            const newClass = new Classes({className, instructor, classID})
+            const newClass = new Classes({classTitle, instructor, classID})
 
             // Save newClass into DB
             newClass.save()
@@ -46,13 +46,13 @@ router.route('/').post((req, res) => {
 // ROUTE:   /classes/:id
 // DESC :   Get a specific class
 // REQ  :   GET
-router.route(':id').get((req, res) => {
+router.route('/:id').get((req, res) => {
   const { id } = req.params;
 
   Classes.findById(id)
     .then ( (err, foundClass) => {
       if (err) res.send(err);
-      res.send(foundClass);
+      res.json(foundClass);
     })
 });
 

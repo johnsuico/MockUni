@@ -2,22 +2,26 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 
 import ClassRow from './ClassRow';
-import Students from '../Students';
+// import Students from '../Students';
 
 function StudentInfo(props) {
 
   const [student, setStudent] = useState();
   const [loading, setLoading] = useState(true);
+  const [classLoading, setClassLoading] = useState(true);
 
   useEffect(() => {
     Axios.get(`http://localhost:5000/students/${props.selected}`)
       .then(response => {
         setStudent(response.data)
         setLoading(false);
+        if (response.data.classes != null) {
+          setClassLoading(false);
+        }
       });
   }, [props.selected]);
 
-  if (loading) {
+  if (loading && classLoading) {
     return (
       <div>
         <h2>Loading...</h2> 
@@ -47,7 +51,15 @@ function StudentInfo(props) {
               </tr>
             </thead>
             <tbody className="class-table-body">
-              
+              {classLoading ? 
+                <tr>
+                  <td>Classes are loading</td>
+                </tr>
+              :
+                student.classes.map(classes => (
+                  <ClassRow key={classes} id={classes} />
+                ))
+              }
             </tbody>
           </table>
 

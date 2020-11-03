@@ -22,7 +22,7 @@ function Bargraph(props) {
   }, [])
 
   const classState = {
-    labels: data.map(labels => labels.className),
+    labels: data.map(labels => labels.classTitle),
     datasets: [
       {
         label: 'Class Student Enrollment',
