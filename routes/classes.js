@@ -50,8 +50,7 @@ router.route('/:id').get((req, res) => {
   const { id } = req.params;
 
   Classes.findById(id)
-    .then ( (err, foundClass) => {
-      if (err) res.send(err);
+    .then ( foundClass => {
       res.json(foundClass);
     })
 });

@@ -4,19 +4,31 @@ import Axios from 'axios';
 function ClassRow(props) {
 
   const [classes, setClasses] = useState();
+  const [classLoading, setClassLoading] = useState(true);
 
   useEffect(() => {
     Axios.get(`http://localhost:5000/classes/${props.id}`)
-    .then(response => {
-      setClasses(response.data);
+      .then(response => {
+        setClasses(response.data)
+        setClassLoading(false);
     })
-  }, [props.id])
+  })
+
+  if(classLoading) {
+    return (
+      <tr className="classData-row">
+        <td className="classData">Loading...</td>
+        <td className="classData">Loading...</td>
+        <td className="classData">Loading...</td>
+      </tr>
+    )
+  }
 
   return (
     <tr className="classData-row">
-      <td className="classData">Test Class Name</td>
-      <td className="classData">Test Instructor</td>
-      <td className="classData">Test ID</td>
+      <td className="classData">{classes.classTitle}</td>
+      <td className="classData">{classes.instructor}</td>
+      <td className="classData">{classes.classID}</td>
     </tr>
   )
 }
