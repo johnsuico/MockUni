@@ -26,7 +26,7 @@ function Bargraph(props) {
     datasets: [
       {
         label: 'Class Student Enrollment',
-        backgroundColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(84, 101, 255, 1)',
         borderColor: 'rgba(0, 0, 0, 1)',
         borderWidth: 2,
         data: data.map(x => x.students.length)
@@ -39,7 +39,7 @@ function Bargraph(props) {
     datasets: [
       {
         label: 'Book Checked Out',
-        backgroundColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(84, 101, 255, 1)',
         borderColor: 'rgba(0, 0, 0, 1)',
         borderWidth: 2,
         data: data.map(x => x.students.length)
@@ -61,6 +61,16 @@ function Bargraph(props) {
             legend: {
               display: false,
               position: 'right'
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beingAtZero: true,
+                  min: 0,
+                  max: data.numStudents,
+                  precision: 0
+                }
+              }]
             }
           }}
         />
@@ -76,6 +86,16 @@ function Bargraph(props) {
             legend: {
               display: false,
               position: 'right'
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beingAtZero: true,
+                  min: 0,
+                  max: data.numStudents,
+                  precision: 0
+                }
+              }]
             }
           }}
         />

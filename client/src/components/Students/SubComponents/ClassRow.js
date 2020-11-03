@@ -18,8 +18,6 @@ function ClassRow(props) {
     return (
       <tr className="classData-row">
         <td className="classData">Loading...</td>
-        <td className="classData">Loading...</td>
-        <td className="classData">Loading...</td>
       </tr>
     )
   }

@@ -10,7 +10,7 @@ router.route('/').get((req, res) => {
 });
 
 // ROUTE:   /classes/
-// DESC :   Delete all books from the database
+// DESC :   Delete all classes from the database
 // REQ  :   DELETE
 router.route('/').delete((req, res) => {
     Classes.deleteMany({})
@@ -19,7 +19,7 @@ router.route('/').delete((req, res) => {
 })
 
 // ROUTE:   /classes/
-// DESC :   Add a new book to database
+// DESC :   Add a new class to database
 // REQ  :   POST
 router.route('/').post((req, res) => {
     const { classTitle, instructor, classID } = req.body;

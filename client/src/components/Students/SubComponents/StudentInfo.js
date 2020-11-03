@@ -2,26 +2,23 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 
 import ClassRow from './ClassRow';
-// import Students from '../Students';
 
 function StudentInfo(props) {
 
   const [student, setStudent] = useState();
   const [loading, setLoading] = useState(true);
-  const [classLoading, setClassLoading] = useState(true);
 
   useEffect(() => {
     Axios.get(`http://localhost:5000/students/${props.selected}`)
       .then(response => {
         setStudent(response.data)
-        setLoading(false);
         if (response.data.classes != null) {
-          setClassLoading(false);
+          setLoading(false);
         }
       });
   }, [props.selected]);
 
-  if (loading && classLoading) {
+  if (loading) {
     return (
       <div>
         <h2>Loading...</h2> 
@@ -42,16 +39,17 @@ function StudentInfo(props) {
         <div className="student-classes-container">
           <h3 className="section-title">Classes</h3>
 
-          <table className="class-list-table">
-            <thead className="class-list-table-headers">
-              <tr className="class-list-header-row">
-                <th className="class-table-headers">Class Name</th>
-                <th className="class-table-headers">Instructor</th>
-                <th className="class-table-headers">Class ID</th>
+          {/* Class List Table */}
+          <table className="s2-list-table">
+            <thead className="s2-list-table-headers">
+              <tr className="s2-list-header-row">
+                <th className="s2-table-headers">Class Name</th>
+                <th className="s2-table-headers">Instructor</th>
+                <th className="s2-table-headers">Class ID</th>
               </tr>
             </thead>
             <tbody className="class-table-body">
-              {classLoading ? 
+              {loading ? 
                 <tr>
                   <td>Classes are loading</td>
                 </tr>
@@ -62,6 +60,8 @@ function StudentInfo(props) {
               }
             </tbody>
           </table>
+
+          {/* Book List Table */}
 
         </div>
       </div>

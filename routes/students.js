@@ -67,17 +67,15 @@ router.route('/:id/class').put((req, res) => {
 
   Student.findByIdAndUpdate(id)
     .then(student => {
-      if (student.classes.length === 0) {
+      if (student.classes.length == 0) {
         student.classes.push(classID);
         student.save();
-        res.json(student);
 
         Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
         .then(newClass => {
-          // newClass.numStudents = 0;
+          newClass.numStudents = 0;
           newClass.students.push(id);
           newClass.save();
-          console.log(newClass);
         })
 
       } else {
@@ -88,14 +86,12 @@ router.route('/:id/class').put((req, res) => {
           } else {
             student.classes.push(classID);
             student.save();
-            res.json(student)
   
             Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
               .then(newClass => {
-                // newClass.numStudents = 0;
+                newClass.numStudents = 0;
                 newClass.students.push(id);
                 newClass.save();
-                console.log(newClass);
               })
           }
         })
