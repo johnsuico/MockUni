@@ -5,6 +5,9 @@
 .student-indepth-container {
   margin: 0 10%;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
 }
 
 .header-container {
@@ -44,3 +47,47 @@
   height: 100%;
 }
 
+.classData {
+  padding: 1.5% 0;
+}
+
+.book-table-container {
+  margin-top: 5%;
+  border-top: 2px solid var(--divider-color);
+  padding-top: 2.5%;
+}
+
+.btn-container-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-container {
+  margin: 5% 0;
+}
+
+.edit-btn {
+  border: none;
+  color: white;
+  background-color: var(--button-color);
+  padding: 3% 10%;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.edit-btn:hover {
+  background-color: var(--button-color-hover);
+}
+
+.delete-btn {
+  border: none;
+  color: white;
+  background-color: var(--delete-color);
+  padding: 3% 10%;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.delete-btn:hover {
+  background-color: var(--delete-color-hover);
+}

@@ -12,7 +12,7 @@ function StudentInfo(props) {
     Axios.get(`http://localhost:5000/students/${props.selected}`)
       .then(response => {
         setStudent(response.data)
-        if (response.data.classes != null) {
+        if (response.data.classes != null && response.data.books != null) {
           setLoading(false);
         }
       });
@@ -37,31 +37,64 @@ function StudentInfo(props) {
           </div>
         </div>
         <div className="student-classes-container">
-          <h3 className="section-title">Classes</h3>
-
-          {/* Class List Table */}
-          <table className="s2-list-table">
-            <thead className="s2-list-table-headers">
-              <tr className="s2-list-header-row">
-                <th className="s2-table-headers">Class Name</th>
-                <th className="s2-table-headers">Instructor</th>
-                <th className="s2-table-headers">Class ID</th>
-              </tr>
-            </thead>
-            <tbody className="class-table-body">
-              {loading ? 
-                <tr>
-                  <td>Classes are loading</td>
+          <div className="class-table-container">
+            <h3 className="section-title">Classes</h3>
+            {/* Class List Table */}
+            <table className="s2-list-table">
+              <thead className="s2-list-table-headers">
+                <tr className="s2-list-header-row">
+                  <th className="s2-table-headers">Class Name</th>
+                  <th className="s2-table-headers">Instructor</th>
+                  <th className="s2-table-headers">Item ID</th>
                 </tr>
-              :
-                student.classes.map(classes => (
-                  <ClassRow key={classes} id={classes} />
-                ))
-              }
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="s2-table-body">
+                {loading ? 
+                  <tr>
+                    <td>Classes are loading</td>
+                  </tr>
+                :
+                  student.classes.map(classes => (
+                    <ClassRow key={classes} id={classes} selected="classes"/>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="book-table-container">
+            <h3 className="section-title">Books</h3>
+            {/* Book List Table */}
+            <table className="s2-list-table">
+              <thead className="s2-list-table-headers">
+                <tr className="s2-list-header-row">
+                  <th className="s2-table-headers">Book Name</th>
+                  <th className="s2-table-headers">Author</th>
+                  <th className="s2-table-headers">Item ID</th>
+                </tr>
+              </thead>
+              <tbody className="s2-table-body">
+                {loading ? 
+                  <tr>
+                    <td>Classes are loading</td>
+                  </tr>
+                :
+                  student.classes.map(classes => (
+                    <ClassRow key={classes} id={classes} selected="books"/>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
 
-          {/* Book List Table */}
+          <div className="btn-container-group">
+            <div className="btn-container">
+              <button className="edit-btn">Edit Student</button>
+            </div>
+            <div className="btn-container">
+              <button className="delete-btn">Delete Student</button>
+            </div>
+          </div>
 
         </div>
       </div>
