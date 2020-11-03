@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const Student = require('../models/student');
 const Book = require('../models/book');
-const classes = require('../models/class');
+const Classes = require('../models/class');
+const mongoose = require('mongoose');
 
 // ROUTE:   /students/
 // DESC :   Get all students
@@ -55,6 +56,40 @@ router.route('/:id').get((req, res) => {
     .then(student => res.json(student))
     .catch(err => res.send(err));
 })
+
+// ROUTE:   /students/:id/class
+// DESC :   Update student object to add class to array
+// REQ  :   PUT
+router.route('/:id/class').put((req, res) => {
+  const id = req.params.id;
+
+  const classID = req.body.classID;
+
+  Student.findByIdAndUpdate(id)
+    .then(student => {
+
+      student.classes.map(classes => {
+        if (classes == classID) {
+          res.json('Class is already registered');
+        } else {
+          student.classes.push(classID);
+          student.save();
+          res.json(student)
+
+          Classes.findByIdAndUpdate(classID, {$inc : {'numStudents': 1}})
+            .then(classes => {
+              // classes.numStudents = 0;
+              classes.students.push(id);
+              classes.save();
+              console.log(classes);
+            })
+        }
+      })
+
+    });
+
+
+});
 
 // ROUTE:   /students/:id
 // DESC :   Delete a student from the database

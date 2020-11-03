@@ -31,10 +31,10 @@ router.route('/').post((req, res) => {
             // 400 = Bad request
             if(classes) return res.status(400).json({msg: 'Class is already in database'});
 
-            // Create New Book
+            // Create New Class
             const newClass = new Classes({className, instructor, classID})
 
-            // Save newBook into DB
+            // Save newClass into DB
             newClass.save()
                 .then(book => {
                     res.json({msg: 'Successfully added class'})
@@ -43,8 +43,21 @@ router.route('/').post((req, res) => {
         })
 })
 
-// ROUTE:   /books/:id
-// DESC :   Delete a book from the database
+// ROUTE:   /classes/:id
+// DESC :   Get a specific class
+// REQ  :   GET
+router.route(':id').get((req, res) => {
+  const { id } = req.params;
+
+  Classes.findById(id)
+    .then ( (err, foundClass) => {
+      if (err) res.send(err);
+      res.send(foundClass);
+    })
+});
+
+// ROUTE:   /classes/:id
+// DESC :   Delete a class from the database
 // REQ  :   DELETE
 router.route('/:id').delete((req, res) => {
     const id = req.params.id;
