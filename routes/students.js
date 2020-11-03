@@ -101,6 +101,50 @@ router.route('/:id/class').put((req, res) => {
     });
 });
 
+// ROUTE:   /students/:id/book
+// DESC :   Update student object to add book to array
+// REQ  :   PUT
+router.route('/:id/book').put((req, res) => {
+
+  const id = req.params.id;
+  const bookID = req.body.bookID;
+
+  Student.findByIdAndUpdate(id)
+    .then(student => {
+      if (student.books.length == 0) {
+        student.books.push(bookID);
+        student.save();
+
+        Book.findByIdAndUpdate(bookID, { $inc : {'numChecked': 1}})
+        .then(book => {
+          book.numStudents = 0;
+          book.students.push(id);
+          book.save();
+        })
+
+      } else {
+
+        student.books.map(book => {
+          if (book == bookID) {
+            res.json('Book is already checkedout by this student');
+          } else {
+            student.books.push(bookID);
+            student.save();
+  
+            Book.findByIdAndUpdate(bookID, { $inc : {'numChecked': 1}})
+              .then(book => {
+                book.numStudents = 0;
+                book.students.push(id);
+                book.save();
+              })
+          }
+        })
+
+      }
+
+    });
+});
+
 // ROUTE:   /students/:id
 // DESC :   Delete a student from the database
 // REQ  :   DELETE
