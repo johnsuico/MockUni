@@ -12,7 +12,7 @@ function ClassRow(props) {
         setClasses(response.data)
         setClassLoading(false);
     })
-  })
+  }, [props.id])
 
   if(classLoading) {
     return (
