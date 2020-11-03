@@ -8,11 +8,21 @@ function ClassRow(props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Axios.get(`http://localhost:5000/classes/${props.id}`)
+    if (props.selected === 'classes') {
+      Axios.get(`http://localhost:5000/classes/${props.id}`)
       .then(response => {
         setClasses(response.data)
         setLoading(false);
-    })
+      })
+    }
+
+    if (props.selected === 'books') {
+      Axios.get(`http://localhost:5000/books/${props.id}`)
+        .then(response => {
+          setBooks(response.data);
+          setLoading(false);
+        })
+    }
   }, [props.id])
 
   if(loading) {

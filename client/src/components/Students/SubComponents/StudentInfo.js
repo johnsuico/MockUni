@@ -79,8 +79,8 @@ function StudentInfo(props) {
                     <td>Classes are loading</td>
                   </tr>
                 :
-                  student.classes.map(classes => (
-                    <ClassRow key={classes} id={classes} selected="books"/>
+                  student.books.map(books => (
+                    <ClassRow key={books} id={books} selected="books"/>
                   ))
                 }
               </tbody>
