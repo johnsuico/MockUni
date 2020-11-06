@@ -20,6 +20,7 @@ function StudentInfo(props) {
 
   function deleteStudent() {
     Axios.delete(`http://localhost:5000/students/${props.selected}`)
+    window.location.reload(false);
   }
 
   if (loading) {
