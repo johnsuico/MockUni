@@ -63,7 +63,9 @@
 }
 
 .btn-container {
-  margin: 5% 0;
+  padding: 5% 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 .edit-btn {
@@ -73,6 +75,8 @@
   padding: 3% 10%;
   border-radius: 20px;
   width: 100%;
+  font-size: 18px;
+  outline: none;
 }
 
 .edit-btn:hover {
@@ -86,6 +90,8 @@
   padding: 3% 10%;
   border-radius: 20px;
   width: 100%;
+  font-size: 18px;
+  outline: none;
 }
 
 .delete-btn:hover {

@@ -27,7 +27,6 @@ function Students() {
 
   function getAddStudent(toggle) {
     setToggleStudent(toggle);
-    console.log(toggle);
   }
 
   return (

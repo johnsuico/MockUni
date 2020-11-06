@@ -7,7 +7,7 @@ function StudentSideOne(props) {
 
   const [students, setStudents] = useState([]);
   const [selectStudent, setSelectStudent] = useState([]);
-  const [addStudent, setAddStudent] = useState(false);
+  const [addStudent, setAddStudent] = useState(true);
 
   useEffect(() => {
     Axios.get('http://localhost:5000/students')

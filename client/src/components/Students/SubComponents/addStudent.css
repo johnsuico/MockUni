@@ -1,0 +1,87 @@
+.add-header-container {
+  margin: 0 10%;
+  margin-bottom: 10px;
+}
+
+.add-header-title {
+  color: var(--main-color);
+}
+
+.header-caption-container {
+  margin-bottom: 10px;
+}
+
+.header-caption {
+  margin: 3% 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--inactive-color);
+}
+
+.add-student-form {
+  margin: 5% 0;
+}
+
+.add-student-form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+
+.add-student-form-field-error {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+  border-radius: 20px;
+  padding: 5%;
+}
+
+.student-form-label {
+  margin-bottom: 3%;
+}
+
+.student-form-input {
+  border: none;
+  border-bottom: 2px solid var(--gray-border-color);
+  height: 40px;
+  outline: none;
+}
+
+.student-form-input:focus {
+  border-bottom: 2px solid var(--main-color);
+}
+
+.add-student-form-btns {
+  padding: 5% 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.student-form-submit {
+  border: none;
+  padding: 3% 5%;
+  color: white;
+  background-color: var(--button-color);
+  border-radius: 30px;
+  font-size: 18px;
+  outline: none;
+}
+
+.student-form-submit:hover {
+  background-color: var(--button-color-hover);
+}
+
+.student-form-cancel {
+  border: none;
+  padding: 3% 5%;
+  color: white;
+  background-color: var(--delete-color);
+  border-radius: 30px;
+  font-size: 18px;
+  outline: none;
+}
+
+.student-form-cancel:hover {
+  background-color: var(--delete-color-hover);
+}

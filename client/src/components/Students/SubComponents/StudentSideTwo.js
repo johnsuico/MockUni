@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
+import React, { useState } from 'react';
 
 import StudentInfo from './StudentInfo';
+import AddStudentPage1 from './AddStudentPage1';
 
 function StudentSideTwo(props) {
 
   return (
     <div className="sideTwo-container">
-      <StudentInfo selected={props.selected}/>
+      {!props.toggleAdd ?
+        <StudentInfo selected={props.selected}/>
+        :
+        <AddStudentPage1 />
+      }
     </div>
   )
 }
