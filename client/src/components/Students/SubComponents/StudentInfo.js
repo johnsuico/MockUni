@@ -18,6 +18,10 @@ function StudentInfo(props) {
       });
   }, [props.selected]);
 
+  function deleteStudent() {
+    Axios.delete(`http://localhost:5000/students/${props.selected}`)
+  }
+
   if (loading) {
     return (
       <div>
@@ -92,7 +96,7 @@ function StudentInfo(props) {
               <button className="edit-btn">Edit Student</button>
             </div>
             <div className="btn-container">
-              <button className="delete-btn">Delete Student</button>
+              <button className="delete-btn" onClick={deleteStudent}>Delete Student</button>
             </div>
           </div>
 
