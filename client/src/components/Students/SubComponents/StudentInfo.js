@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 
 import ClassRow from './ClassRow';
+import { useHistory } from 'react-router-dom';
 
 function StudentInfo(props) {
 
   const [student, setStudent] = useState();
   const [loading, setLoading] = useState(true);
+  let history = useHistory();
 
   useEffect(() => {
     Axios.get(`http://localhost:5000/students/${props.selected}`)
@@ -21,6 +23,10 @@ function StudentInfo(props) {
   function deleteStudent() {
     Axios.delete(`http://localhost:5000/students/${props.selected}`)
     window.location.reload(false);
+  }
+
+  function editStudent() {
+    history.push(`/students/edit/${props.selected}`);
   }
 
   if (loading) {
@@ -94,7 +100,7 @@ function StudentInfo(props) {
 
           <div className="btn-container-group">
             <div className="btn-container">
-              <button className="edit-btn">Edit Student</button>
+              <button className="edit-btn" onClick={editStudent}>Edit Student</button>
             </div>
             <div className="btn-container">
               <button className="delete-btn" onClick={deleteStudent}>Delete Student</button>

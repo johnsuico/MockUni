@@ -1,0 +1,11 @@
+/* Always need to apply flex to the main container of the component */
+/* This ensure that the sidebar will be to the left of the page */
+.editStudent {
+  display: flex; /* Do not forget to put this in every component container*/
+}
+
+.editStudent-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
