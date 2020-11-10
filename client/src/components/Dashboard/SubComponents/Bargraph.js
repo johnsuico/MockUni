@@ -21,6 +21,8 @@ function Bargraph(props) {
     }
   }, [])
 
+  console.log(data);
+
   const classState = {
     labels: data.map(labels => labels.classTitle),
     datasets: [
@@ -29,7 +31,8 @@ function Bargraph(props) {
         backgroundColor: 'rgba(84, 101, 255, 1)',
         borderColor: 'rgba(0, 0, 0, 1)',
         borderWidth: 2,
-        data: data.map(x => x.students.length)
+        // data: data.map(x => x.students.length)
+        data: data.map(x => x.numStudents)
       }
     ]
   }
