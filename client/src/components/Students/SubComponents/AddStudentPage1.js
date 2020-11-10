@@ -3,12 +3,11 @@ import Axios from 'axios';
 
 import './addStudent.css'
 
-function AddStudentPage1() {
+function AddStudentPage1(props) {
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [SID, setSID] = useState('')
-  const [emptyFields, setEmptyFields] = useState(false);
 
   function handleFirstName(e) {
     setFirstName(e.target.value);
@@ -30,11 +29,12 @@ function AddStudentPage1() {
       SID
     }
 
-    // Axios.post('http://localhost:5000/students', newStudent)
-    //   .then(res => {
-    //     console.log(res.data)
-    //   })
-    //   .catch(err => console.log('Error: ' + err))
+    Axios.post('http://localhost:5000/students', newStudent)
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => console.log('Error: ' + err))
+
 
   }
 
@@ -44,7 +44,7 @@ function AddStudentPage1() {
         <h2 className="add-header-title">Add Student</h2>
         <div className="header-caption-container">
           <h3 className="header-caption">Fill out the following fields</h3>
-          <h3 className="header-caption">You can add classes and books in the next step</h3>
+          <h3 className="header-caption">You can add classes and books in edit student</h3>
         </div>
 
         <form className="add-student-form">
