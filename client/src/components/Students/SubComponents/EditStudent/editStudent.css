@@ -9,3 +9,23 @@
   width: 100vw;
   height: 100vh;
 }
+
+/* Side One */
+.editStudent-title {
+  color: var(--main-color);
+}
+
+.classDataRow {
+  padding: 10px 0;
+}
+
+#addClass-btn {
+  cursor: pointer;
+  color: white;
+  background-color: var(--button-color);
+  border-radius: 40px;
+}
+
+#addClass-btn:hover {
+  background-color: var(--button-color-hover);
+}

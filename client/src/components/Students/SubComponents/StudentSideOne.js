@@ -37,7 +37,6 @@ function StudentSideOne(props) {
           </div>
           <div className="content-header-desc">
             <h3>Click on a student for more information</h3>
-            <h3>Hover over a student and click the 'X' icon to delete a student</h3>
           </div>
         </div>
       </div>

@@ -81,19 +81,29 @@ router.route('/:id/class').put((req, res) => {
       } else {
 
         student.classes.map(classes => {
-          if (classes == classID) {
+          if (classes === classID) {
             res.json('Class is already registered');
-          } else {
-            student.classes.push(classID);
-            student.save();
+          } 
+          // else {
+          //   student.classes.push(classID);
+          //   student.save();
   
-            Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
-              .then(newClass => {
-                newClass.numStudents = 0;
-                newClass.students.push(id);
-                newClass.save();
-              })
-          }
+          //   Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
+          //     .then(newClass => {
+          //       newClass.numStudents = 0;
+          //       newClass.students.push(id);
+          //       newClass.save();
+          //     })
+          // }
+          student.classes.push(classID);
+          student.save();
+
+          Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
+            .then(newClass => {
+              newClass.numStudents = 0;
+              newClass.students.push(id);
+              newClass.save();
+            })
         })
 
       }
