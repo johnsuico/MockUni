@@ -4,6 +4,7 @@ import './editStudent.css'
 
 import Sidebar from '../../../Sidebar/Sidebar'
 import EditSideOne from './EditSideOne';
+import EditSideTwo from './EditSideTwo';
 
 function EditStudent(props) {
   return (
@@ -18,6 +19,12 @@ function EditStudent(props) {
           <EditSideOne />
         </div>
 
+        <div className="students-sideTwo">
+          <div className="sideTwo-header">
+            <h2>MockUni</h2>
+          </div>
+          <EditSideTwo />
+        </div>
         
       </div>
     </div>

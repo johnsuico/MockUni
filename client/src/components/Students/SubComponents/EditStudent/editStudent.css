@@ -53,3 +53,42 @@
   border-radius: 20px;
   font-size: 18px;
 }
+
+/* Side Two */
+.add-class-book-container {
+  margin: 5% 0;
+}
+
+.add-tab-decision {
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-table {
+  width: 100%;
+}
+
+.add-table-data {
+  text-align: center;
+}
+
+.add-table-btn {
+  border: none;
+  outline: none;
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.add-btn-active {
+  cursor: pointer;
+}
+
+.add-btn-active:hover {
+  background-color: var(--main-color-hover);
+}
+
+.add-btn-disable {
+  background-color: var(--main-color-faded);
+}

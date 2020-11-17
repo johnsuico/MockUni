@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-import ClassTableRow from './ClassTableRow';
-
 function EditSideOne() {
 
   let { id } = useParams();
@@ -22,7 +20,7 @@ function EditSideOne() {
         setSID(response.data.SID);
         setLoading(false);
       })
-  }, [])
+  })
 
   function handleFirstName(e) {
     setFirstName(e.target.value);
