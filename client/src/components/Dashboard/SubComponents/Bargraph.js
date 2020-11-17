@@ -21,8 +21,6 @@ function Bargraph(props) {
     }
   }, [])
 
-  console.log(data);
-
   const classState = {
     labels: data.map(labels => labels.classTitle),
     datasets: [
