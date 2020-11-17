@@ -11,21 +11,45 @@
 }
 
 /* Side One */
-.editStudent-title {
+.student-name-container {
   color: var(--main-color);
 }
 
-.classDataRow {
-  padding: 10px 0;
+.edit-student-form {
+  margin: 5% 0;
+  height: 100%;
 }
 
-#addClass-btn {
-  cursor: pointer;
+.edit-student-form-field {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 0;
+}
+
+.edit-student-form-input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--gray-border-color);
+  height: 40px;
+  font-size: 16px;
+}
+
+.edit-student-form-input:focus {
+  border-bottom: 2px solid var(--main-color);
+}
+
+.edit-student-form-submit-container {
+  margin: 10% 0;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-student-form-submit-btn {
+  border: none;
+  outline: none;
   color: white;
-  background-color: var(--button-color);
-  border-radius: 40px;
-}
-
-#addClass-btn:hover {
-  background-color: var(--button-color-hover);
+  background-color: var(--main-color);
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-size: 18px;
 }

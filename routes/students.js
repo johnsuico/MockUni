@@ -57,6 +57,23 @@ router.route('/:id').get((req, res) => {
     .catch(err => res.send(err));
 })
 
+// ROUTE:   /students/:id
+// DESC :   Update a student
+// REQ  :   PUT
+router.route('/:id').put((req, res) => {
+  const id = req.params.id;
+  const { firstName, lastName, SID } = req.body;
+
+  const update = {
+    firstName, lastName, SID
+  }
+
+  Student.findByIdAndUpdate(id, update)
+    .then(student => res.json('Successfully updated student'))
+    .catch(err => res.json(err));
+
+});
+
 // ROUTE:   /students/:id/class
 // DESC :   Update student object to add class to array
 // REQ  :   PUT
