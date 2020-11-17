@@ -23,7 +23,7 @@ function ClassRow(props) {
           setLoading(false);
         })
     }
-  }, [props.id])
+  })
 
   if(loading) {
     return (

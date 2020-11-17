@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 
 function TableRow(props) {
 
-  const [SID, setSID] = useState(props.SID);
-  const [ID, setID] = useState(props.ID);
-
   function onClick() {
-    props.onClickParent(ID)
+    props.onClickParent(props.ID)
   }
 
   return (
