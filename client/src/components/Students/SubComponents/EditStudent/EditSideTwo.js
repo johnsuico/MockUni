@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import AddBookClass from './AddBookClass';
 
 function EditSideTwo() {
@@ -42,7 +41,7 @@ function EditSideTwo() {
             </div>
           </div>
 
-          <AddBookClass selected={decision}/>
+          <AddBookClass selected={decision} />
 
         </div>
       </div>

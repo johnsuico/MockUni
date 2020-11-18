@@ -39,7 +39,7 @@ router.route('/').post((req, res) => {
 
             // Save newStudent into DB
             newStudent.save()
-                .then(student => {
+                .then(selectedStudent => {
                     res.json({msg: 'Successfully added student'})
                 })
                 .catch(err => res.status(400).json('Error: ' + err));
@@ -84,48 +84,15 @@ router.route('/:id/class').put((req, res) => {
 
   Student.findByIdAndUpdate(id)
     .then(student => {
-      if (student.classes.length == 0) {
-        student.classes.push(classID);
-        student.save();
+      student.classes.push(classID);
+      student.save();
 
-        Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
+      Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
         .then(newClass => {
-          newClass.numStudents = 0;
           newClass.students.push(id);
           newClass.save();
         })
-
-      } else {
-
-        student.classes.map(classes => {
-          if (classes === classID) {
-            res.json('Class is already registered');
-          } 
-          // else {
-          //   student.classes.push(classID);
-          //   student.save();
-  
-          //   Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
-          //     .then(newClass => {
-          //       newClass.numStudents = 0;
-          //       newClass.students.push(id);
-          //       newClass.save();
-          //     })
-          // }
-          student.classes.push(classID);
-          student.save();
-
-          Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
-            .then(newClass => {
-              newClass.numStudents = 0;
-              newClass.students.push(id);
-              newClass.save();
-            })
-        })
-
-      }
-
-    });
+    })
 });
 
 // ROUTE:   /students/:id/book
@@ -159,10 +126,10 @@ router.route('/:id/book').put((req, res) => {
             student.save();
   
             Book.findByIdAndUpdate(bookID, { $inc : {'numChecked': 1}})
-              .then(book => {
-                book.numStudents = 0;
-                book.students.push(id);
-                book.save();
+              .then(selectedBook => {
+                selectedBook.numStudents = 0;
+                selectedBook.students.push(id);
+                selectedBook.save();
               })
           }
         })

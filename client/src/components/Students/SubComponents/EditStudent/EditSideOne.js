@@ -20,7 +20,7 @@ function EditSideOne() {
         setSID(response.data.SID);
         setLoading(false);
       })
-  })
+  }, [id])
 
   function handleFirstName(e) {
     setFirstName(e.target.value);

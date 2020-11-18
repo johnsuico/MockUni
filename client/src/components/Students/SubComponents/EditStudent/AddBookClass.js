@@ -10,6 +10,7 @@ function AddBookClass(props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+
     if (props.selected === "classes") {
       Axios.get(`http://localhost:5000/classes`)
         .then(res => {
@@ -39,8 +40,8 @@ function AddBookClass(props) {
               <th className="add-table-heading">Instructor</th>
               <th className="add-table-heading">Class ID</th>
             </tr>
-            {classes.map((classes, index) => (
-              <TableList index={index+1} title={classes.classTitle} instructor={classes.instructor} ID={classes.classID} key={classes.classID}/>
+            {classes.map((selectedClass, index) => (
+              <TableList index={index+1} title={selectedClass.classTitle} instructor={selectedClass.instructor} ID={selectedClass.classID} key={selectedClass.classID} classArray={classes} selected={props.selected} objID={selectedClass._id} />
             ))}
           </table>
         </div>
@@ -53,14 +54,16 @@ function AddBookClass(props) {
       <div className="add">
         <div className="add-container">
           <table className="add-table">
-            <tr className="add-table-row">
-              <th className="add-table-heading">#</th>
-              <th className="add-table-heading">Book Title</th>
-              <th className="add-table-heading">Author</th>
-              <th className="add-table-heading">ISBN</th>
-            </tr>
-            {books.map((books, index) => (
-              <TableList index={index+1} title={books.title} instructor={books.author} ID={books.ISBN} key={books.ISBN} />
+            <thead className="add-table-head">
+              <tr className="add-table-row">
+                <th className="add-table-heading">#</th>
+                <th className="add-table-heading">Book Title</th>
+                <th className="add-table-heading">Author</th>
+                <th className="add-table-heading">ISBN</th>
+              </tr>
+            </thead>
+            {books.map((selectedBooks, index) => (
+              <TableList index={index+1} title={selectedBooks.title} instructor={selectedBooks.author} ID={selectedBooks.ISBN} key={selectedBooks.ISBN} bookArray={books} selected={props.selected} objID={selectedBooks._id} />
             ))}
           </table>
         </div>
