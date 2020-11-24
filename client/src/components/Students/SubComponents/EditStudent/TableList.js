@@ -34,13 +34,6 @@ function TableList(props) {
           setStudent(res.data.books);
           setLoading(false);
 
-          // res.data.classes.map(selected => {
-          //   if (selected === props.objID) {
-          //     console.log(selected);
-          //     setFound(true);
-          //   }
-          // });
-
           res.data.books.map(selected => {
             if (selected === props.objID) {
               setFound(true);
