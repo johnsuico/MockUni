@@ -5,10 +5,6 @@ const bookSchema = new mongoose.Schema({
     title: String,
     author: String,
     ISBN: Number,
-    numChecked: {
-        type: Number,
-        default: 0
-    },
     // Only store the object ID into the array
     students: [{
         type: mongoose.Schema.Types.ObjectId, ref: 'Student'

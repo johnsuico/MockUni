@@ -8,10 +8,6 @@ const classSchema = new mongoose.Schema({
         type: Number,
         unique: true
     },
-    numStudents: {
-        type: Number,
-        default: 0
-    },
     // Only store the object ID into the array
     students: [{
         type: mongoose.Schema.Types.ObjectId, ref: 'Student'
