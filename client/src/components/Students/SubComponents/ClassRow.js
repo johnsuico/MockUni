@@ -3,7 +3,7 @@ import Axios from 'axios';
 
 function ClassRow(props) {
 
-  const [classes, setClasses] = useState();
+  const [classes, setClasses] = useState([]);
   const [books, setBooks] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -11,8 +11,12 @@ function ClassRow(props) {
     if (props.selected === 'classes') {
       Axios.get(`http://localhost:5000/classes/${props.id}`)
       .then(response => {
-        setClasses(response.data)
-        setLoading(false);
+        setClasses(response.data);
+        if (response.data !== null) {
+          setLoading(false);
+        } else {
+          setLoading(true);
+        }
       })
     }
 
@@ -20,7 +24,11 @@ function ClassRow(props) {
       Axios.get(`http://localhost:5000/books/${props.id}`)
         .then(response => {
           setBooks(response.data);
-          setLoading(false);
+          if (response.data !== null) {
+            setLoading(false);
+          } else {
+            setLoading(true);
+          }
         })
     }
   }, [])
@@ -33,7 +41,7 @@ function ClassRow(props) {
     )
   }
 
-  if (props.selected === "classes") {
+  if (props.selected === "classes" && !loading) {
     return (
       <tr className="classData-row">
         <td className="classData">{classes.classTitle}</td>
@@ -43,7 +51,7 @@ function ClassRow(props) {
     )
   }
 
-  if (props.selected === "books") {
+  if (props.selected === "books" && !loading) {
     return (
       <tr className="classData-row">
         <td className="classData">{books.title}</td>

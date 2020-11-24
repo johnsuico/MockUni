@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 function EditSideOne() {
 
@@ -10,6 +10,8 @@ function EditSideOne() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [SID, setSID] = useState('');
+
+  const history = useHistory();
 
   useEffect(() => {
     Axios.get(`http://localhost:5000/students/${id}`)
@@ -36,13 +38,14 @@ function EditSideOne() {
 
   function onSubmitUpdate(e) {
     const update = {
-      firstName,
-      lastName,
-      SID
+      firstName: firstName,
+      lastName: lastName,
+      SID: SID
     }
     Axios.put(`http://localhost:5000/students/${id}`, update)
-      .then(res => console.log(res.data))
+      .then(res => console.log(res.data.status))
       .catch(err => console.log(err));
+
   }
 
   if (loading) {

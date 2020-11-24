@@ -6,64 +6,100 @@ function TableList(props) {
 
   const { id } = useParams();
 
-  const [pressed, setPressed] = useState(false);
   const [student, setStudent] = useState([]);
-
+  const [loading, setLoading] = useState(true);
+  const [found, setFound] = useState(false);
 
   useEffect(() => {
-    if (props.selected === "books") {
+    
+    if (props.selected === 'classes') {
       Axios.get(`http://localhost:5000/students/${id}`)
-        .then(res => setStudent(res.data.books));
+        .then(res => {
+          setStudent(res.data.classes);
+          setLoading(false);
+          
+          res.data.classes.map(selected => {
+            if (selected === props.objID) {
+              setFound(true);
+            }
+          });
 
-      student.map(selected => {
-        if (selected === props.objID) {
-          setPressed(true);
-        }
-      })
-    }
+        });
+      console.log('class');
+    } 
 
-    if (props.selected === "classes") {
+    if (props.selected === 'books') {
       Axios.get(`http://localhost:5000/students/${id}`)
-        .then(res => setStudent(res.data.classes));
+        .then(res => {
+          setStudent(res.data.books);
+          setLoading(false);
 
-      student.map(selected => {
-        if (selected === props.objID) {
-          setPressed(true);
-        }
-      }) 
+          res.data.classes.map(selected => {
+            if (selected === props.objID) {
+              setFound(true);
+            }
+          });
+        });
+      console.log('book')
     }
-  });
+  }, []);
 
   function handleAdd() {
 
-    const sendClass = {
-      classID: props.objID
-    };
+    if (props.selected === 'classes') {
+      const sendClass = {
+        classID: props.objID
+      };
+  
+      Axios.put(`http://localhost:5000/students/${id}/class`, sendClass)
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err));
+  
+      setFound(true);
+    }
 
-    Axios.put(`http://localhost:5000/students/${id}/class`, sendClass)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
+    if (props.selected === 'books') {
+      const sendBook = {
+        bookID: props.objID
+      };
 
-    setPressed(true);
+      Axios.put(`http://localhost:5000/students/${id}/book`, sendBook)
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err));
+
+      setFound(true);
+    }
   }
 
-  return(
-    <tbody className="add-table-body">
-      <tr className="add-table-row">
-        <td className="add-table-data">{props.index}</td>
-        <td className="add-table-data">{props.title}</td>
-        <td className="add-table-data">{props.instructor}</td>
-        <td className="add-table-data">{props.ID}</td>
-        <td className="add-table-data">
-          {!pressed ?
-            <button className="add-table-btn add-btn-active" onClick={handleAdd}>Add</button>
-            :
-            <button className="add-table-btn add-btn-disable" onClick={handleAdd} disabled>Done</button>
-          }
-        </td>
-      </tr>
-    </tbody>
-  )
+  if (loading) {
+    return (
+      <tbody className="add-table-body">
+        <tr className="add-table-row">
+          <td className="add-table-data">Loading</td>
+        </tr>
+      </tbody>
+    )
+  }
+
+  if (!loading) {
+    return(
+      <tbody className="add-table-body">
+        <tr className="add-table-row">
+          <td className="add-table-data">{props.index}</td>
+          <td className="add-table-data">{props.title}</td>
+          <td className="add-table-data">{props.instructor}</td>
+          <td className="add-table-data">{props.ID}</td>
+          <td className="add-table-data">
+            {!found ?
+              <button className="add-table-btn add-btn-active" onClick={handleAdd}>Add</button>
+              :
+              <button className="add-table-btn add-btn-disable" onClick={handleAdd} disabled>Done</button>
+            }
+          </td>
+        </tr>
+      </tbody>
+    )
+  }
 }
 
 export default TableList;

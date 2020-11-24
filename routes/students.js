@@ -69,7 +69,7 @@ router.route('/:id').put((req, res) => {
   }
 
   Student.findByIdAndUpdate(id, update)
-    .then(student => res.json('Successfully updated student'))
+    .then(student => res.json({status: 'ok'}))
     .catch(err => res.json(err));
 
 });

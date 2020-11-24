@@ -4,7 +4,6 @@ import Axios from 'axios';
 import TableRow from './TableRow'
 
 function StudentSideOne(props) {
-
   const [students, setStudents] = useState([]);
   const [selectStudent, setSelectStudent] = useState([]);
   const [addStudent, setAddStudent] = useState(true);
@@ -12,8 +11,8 @@ function StudentSideOne(props) {
   useEffect(() => {
     Axios.get('http://localhost:5000/students')
       .then(response => {
-        setStudents(response.data)
-        setSelectStudent(response.data[0]._id)
+          setStudents(response.data)
+          setSelectStudent(response.data[0]._id)
       });
   }, [])
 
