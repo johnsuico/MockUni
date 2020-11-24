@@ -87,12 +87,13 @@ router.route('/:id/class').put((req, res) => {
       student.classes.push(classID);
       student.save();
 
-      Classes.findByIdAndUpdate(classID, { $inc : {'numStudents': 1}})
+      Classes.findByIdAndUpdate(classID)
         .then(newClass => {
           newClass.students.push(id);
           newClass.save();
         })
     })
+    .catch(err => console.log(err));
 });
 
 // ROUTE:   /students/:id/book
@@ -105,38 +106,16 @@ router.route('/:id/book').put((req, res) => {
 
   Student.findByIdAndUpdate(id)
     .then(student => {
-      if (student.books.length == 0) {
-        student.books.push(bookID);
-        student.save();
+      student.books.push(bookID);
+      student.save();
 
-        Book.findByIdAndUpdate(bookID, { $inc : {'numChecked': 1}})
-        .then(book => {
-          book.numStudents = 0;
-          book.students.push(id);
-          book.save();
+      Book.findByIdAndUpdate(bookID)
+        .then(newBook => {
+          newBook.students.push(id);
+          newBook.save()
         })
-
-      } else {
-
-        student.books.map(book => {
-          if (book == bookID) {
-            res.json('Book is already checkedout by this student');
-          } else {
-            student.books.push(bookID);
-            student.save();
-  
-            Book.findByIdAndUpdate(bookID, { $inc : {'numChecked': 1}})
-              .then(selectedBook => {
-                selectedBook.numStudents = 0;
-                selectedBook.students.push(id);
-                selectedBook.save();
-              })
-          }
-        })
-
-      }
-
-    });
+    })
+    .catch(err => console.log(err));
 });
 
 // ROUTE:   /students/:id
@@ -144,10 +123,35 @@ router.route('/:id/book').put((req, res) => {
 // REQ  :   DELETE
 router.route('/:id').delete((req, res) => {
     const id = req.params.id;
-    
+
+    Student.findById(id)
+      .then(student => {
+
+        console.log('Removing student from class and book');
+        student.classes.map(selected => {
+          Classes.findByIdAndUpdate(
+            selected,
+            { $pull: {"students": student._id}}
+            )
+            .then (console.log('Remove student from class'))
+        });
+
+        student.books.map(selected => {
+          Book.findByIdAndUpdate(
+            selected,
+            { $pull: {"students": student._id}}
+          )
+          .then (console.log('Remove student from book'))
+        });
+
+      })
+      .catch(err => console.log(err));
+
     Student.findByIdAndDelete(id)
-        .then(student => res.send(`Student: ${student.firstName} ${student.lastName} has been deleted`))
-        .catch(err => res.send(err));
+      .then(student => {
+        res.send(`Student: ${student.firstName} ${student.lastName} has been deleted`);
+      })
+      .catch (err => console.log(err));
 });
 
 module.exports = router;
