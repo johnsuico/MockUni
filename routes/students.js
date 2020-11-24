@@ -124,18 +124,16 @@ router.route('/:id/book').put((req, res) => {
 router.route('/:id').delete((req, res) => {
     const id = req.params.id;
 
-    Student.findById(id)
-      .then(student => {
-
-        console.log('Removing student from class and book');
+    Student.findById(id, (err, student) => {
+      if (student) {
+        console.log('Found student');
         student.classes.map(selected => {
           Classes.findByIdAndUpdate(
             selected,
-            { $pull: {"students": student._id}}
-            )
-            .then (console.log('Remove student from class'))
+            { $pull : {"students": student._id}}
+          )
+          .then(console.log('Remove student from class'))
         });
-
         student.books.map(selected => {
           Book.findByIdAndUpdate(
             selected,
@@ -143,9 +141,10 @@ router.route('/:id').delete((req, res) => {
           )
           .then (console.log('Remove student from book'))
         });
-
-      })
-      .catch(err => console.log(err));
+      } else {
+        console.log(err);
+      }
+    });
 
     Student.findByIdAndDelete(id)
       .then(student => {
