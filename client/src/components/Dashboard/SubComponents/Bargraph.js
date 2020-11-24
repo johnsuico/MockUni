@@ -29,7 +29,7 @@ function Bargraph(props) {
         backgroundColor: 'rgba(84, 101, 255, 1)',
         borderColor: 'rgba(0, 0, 0, 1)',
         borderWidth: 2,
-        data: data.map(x => x.numStudents)
+        data: data.map(x => x.students.length)
       }
     ]
   }
