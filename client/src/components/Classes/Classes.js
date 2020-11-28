@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 // Import CSS File
@@ -6,14 +6,35 @@ import './classes.css';
 
 // Import Sidebar Component
 import Sidebar from '../Sidebar/Sidebar';
+import SideOne from './SubComponents/ClassSideOne';
 
 function Classes() {
+
+    const [selected, setSelected] = useState('');
+    const [toggleClass, setToggleClass] = useState(false);
+
+    useEffect(() => {
+        Axios.get('http://localhost:5000/classes')
+            .then(response => setSelected(response.data[0]._id))
+    }, [])
+    
+    function getSelected(selected) {
+        setSelected(selected);
+    }
+    
+    function getAddClass(toggle) {
+        setToggleClass(toggle);
+    }
+
     return (
+        
         <div className="classes">
             <Sidebar active="classes" />
+
             <div className="classes-container">
                 <div className="classes-sideOne">
-                    <h1>Classes Side One</h1>
+                    <h1>Class Management</h1>
+                    <SideOne getSelected={getSelected} getToggle={getAddClass}/>
                 </div>
                 <div className="classes-sideTwo">
                     <h1>Classes Side Two</h1>
