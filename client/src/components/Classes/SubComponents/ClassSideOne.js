@@ -54,6 +54,7 @@ function ClassSideOne(props) {
             <TableRow 
               index={index+1} 
               classTitle={classe.classTitle} 
+              instructor={classe.instructor}
               classID={classe.classID} 
               ID={classe._id}
               key={classe._id} 
