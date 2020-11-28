@@ -8,6 +8,7 @@ import './class-sideOne.css';
 // Import Sidebar Component
 import Sidebar from '../Sidebar/Sidebar';
 import SideOne from './SubComponents/ClassSideOne';
+import SideTwo from './SubComponents/ClassSideTwo';
 
 function Classes() {
 
@@ -40,7 +41,10 @@ function Classes() {
                     <SideOne getSelected={getSelected} getToggle={getAddClass}/>
                 </div>
                 <div className="classes-sideTwo">
-                    <h1>Classes Side Two</h1>
+                    <div className="sideTwo-header">
+                        <h2>Mock University Name</h2>
+                    </div>
+                    <SideTwo selected={selected} toggleAdd={toggleClass}/>
                 </div>
             </div>
         </div>
