@@ -1,0 +1,87 @@
+.add-header-container {
+  margin: 0 10%;
+  margin-bottom: 10px;
+}
+
+.add-header-title {
+  color: var(--main-color);
+}
+
+.header-caption-container {
+  margin-bottom: 10px;
+}
+
+.header-caption {
+  margin: 3% 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--inactive-color);
+}
+
+.add-book-form {
+  margin: 5% 0;
+}
+
+.add-book-form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+
+.add-book-form-field-error {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+  border-radius: 20px;
+  padding: 5%;
+}
+
+.book-form-label {
+  margin-bottom: 3%;
+}
+
+.book-form-input {
+  border: none;
+  border-bottom: 2px solid var(--gray-border-color);
+  height: 40px;
+  outline: none;
+}
+
+.book-form-input:focus {
+  border-bottom: 2px solid var(--main-color);
+}
+
+.add-book-form-btns {
+  padding: 5% 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.book-form-submit {
+  border: none;
+  padding: 3% 5%;
+  color: white;
+  background-color: var(--button-color);
+  border-radius: 30px;
+  font-size: 18px;
+  outline: none;
+}
+
+.book-form-submit:hover {
+  background-color: var(--button-color-hover);
+}
+
+.book-form-cancel {
+  border: none;
+  padding: 3% 5%;
+  color: white;
+  background-color: var(--delete-color);
+  border-radius: 30px;
+  font-size: 18px;
+  outline: none;
+}
+
+.book-form-cancel:hover {
+  background-color: var(--delete-color-hover);
+}
