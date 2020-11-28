@@ -3,6 +3,7 @@ import Axios from 'axios';
 
 // Import CSS File
 import './classes.css';
+import './class-sideOne.css';
 
 // Import Sidebar Component
 import Sidebar from '../Sidebar/Sidebar';
@@ -33,7 +34,9 @@ function Classes() {
 
             <div className="classes-container">
                 <div className="classes-sideOne">
-                    <h1>Class Management</h1>
+                    <div className="sideOne-header">
+                        <h2>Class Management</h2>
+                    </div>
                     <SideOne getSelected={getSelected} getToggle={getAddClass}/>
                 </div>
                 <div className="classes-sideTwo">
