@@ -12,22 +12,6 @@ function TableList(props) {
 
   useEffect(() => {
     
-    if (props.selected === 'books') {
-      Axios.get(`http://localhost:5000/classes/${id}`)
-      .then(res => {
-        setClass(res.data.books);
-        setLoading(false);
-        
-        res.data.books.map(selected => {
-          if (selected === props.objID) {
-            setFound(true);
-          }
-        });
-      });
-      console.log('book')
-    }
-
-    if (props.selected === 'students') {
       Axios.get(`http://localhost:5000/classes/${id}`)
         .then(res => {
           setClass(res.data.students);
@@ -40,34 +24,21 @@ function TableList(props) {
           });
 
         });
-      console.log('student');
-    } 
+ 
   }, []);
 
   function handleAdd() {
 
-    if (props.selected === 'books') {
-      const sendBook = {
-        bookID: props.objID
-      };
-      
-      Axios.put(`http://localhost:5000/classes/${id}/book`, sendBook)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
-      
-      setFound(true);
-    }
-
-    if (props.selected === 'students') {
       const sendStudent = {
         studentID: props.objID
       };
+
       Axios.put(`http://localhost:5000/classes/${id}/student`, sendStudent)
         .then(res => console.log(res.data))
         .catch(err => console.log(err));
   
       setFound(true);
-    }
+
   }
 
   if (loading) {

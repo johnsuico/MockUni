@@ -14,7 +14,7 @@ function ClassInfo(props) {
     Axios.get(`http://localhost:5000/classes/${props.selected}`)
       .then(response => {
         setClass(response.data)
-        if (response.data.students != null && response.data.books != null)  {
+        if (response.data.students != null)  {
           setLoading(false);
         }
       });
@@ -68,30 +68,6 @@ function ClassInfo(props) {
                 :
                   classe.students.map(students => (
                     <ClassRow key={students} id={students} selected="students"/>
-                  ))
-                }
-              </tbody>
-            </table>
-          </div>
-          
-          <div className="book-table-container">
-            <h3 className="section-title">Books</h3>
-            <table className="s2-list-table">
-              <thead className="s2-list-table-headers">
-                <tr className="s2-list-header-row">
-                  <th className="s2-table-headers">Book Name</th>
-                  <th className="s2-table-headers">Author</th>
-                  <th className="s2-table-headers">Item ID</th>
-                </tr>
-              </thead>
-              <tbody className="s2-table-body">
-                {loading ? 
-                  <tr>
-                    <td>Books are loading</td>
-                  </tr>
-                :
-                  classe.books.map(books => (
-                    <ClassRow key={books} id={books} selected="books"/>
                   ))
                 }
               </tbody>

@@ -39,7 +39,7 @@ router.route('/').post((req, res) => {
 
             // Save newClass into DB
             newClass.save()
-                .then(classes => {
+                .then(classe => {
                     res.json({msg: 'Successfully added class'})
                 })
                 .catch(err => res.status(400).json('Error: ' + err));
@@ -77,14 +77,14 @@ router.route('/:id').put((req, res) => {
 // ROUTE:   /classes/:id/student
 // DESC :   Update class object to add student to array
 // REQ  :   PUT
-router.route('/:id/class').put((req, res) => {
+router.route('/:id/student').put((req, res) => {
 
     const id = req.params.id;
     const studentID = req.body.studentID;
   
     Classes.findByIdAndUpdate(id)
       .then(classes => {
-        classes.classes.push(studentID);
+        classes.students.push(studentID);
         classes.save();
   
         Student.findByIdAndUpdate(studentID)
@@ -95,7 +95,7 @@ router.route('/:id/class').put((req, res) => {
       })
       .catch(err => console.log(err));
 
-    console.log('add student reached');
+    // console.log(studentID);
 });
 
 // ROUTE:   /classes/:id/book
@@ -125,16 +125,16 @@ router.route('/:id/book').put((req, res) => {
 // REQ  :   DELETE
 router.route('/:id').delete((req, res) => {
     const id = req.params.id;
-    
+
     Classes.findById(id, (err, classe) => {
-      if (classe) {
+      if(classe) {
         console.log('Found class');
         classe.students.map(selected => {
           Student.findByIdAndUpdate(
             selected,
             { $pull : {"classes": classe._id}}
           )
-          .then(console.log('Remove class from student'))
+          .then(console.log('Removed class from student'))
         });
       } else {
         console.log(err);

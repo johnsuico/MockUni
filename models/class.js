@@ -12,9 +12,6 @@ const classSchema = new mongoose.Schema({
     // Only store the object ID into the array
     students: [{
         type: mongoose.Schema.Types.ObjectId, ref: 'Student'
-    }],
-    books: [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'Book'
     }]
 })
 
