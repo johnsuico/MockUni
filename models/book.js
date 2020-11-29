@@ -6,6 +6,9 @@ const bookSchema = new mongoose.Schema({
     author: String,
     ISBN: Number,
     // Only store the object ID into the array
+    classes: [{
+        type: mongoose.Schema.Types.ObjectId, ref: 'Class'
+    }],
     students: [{
         type: mongoose.Schema.Types.ObjectId, ref: 'Student'
     }]
