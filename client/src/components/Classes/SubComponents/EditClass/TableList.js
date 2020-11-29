@@ -12,7 +12,6 @@ function TableList(props) {
 
   useEffect(() => {
     
-    
     if (props.selected === 'books') {
       Axios.get(`http://localhost:5000/classes/${id}`)
       .then(res => {

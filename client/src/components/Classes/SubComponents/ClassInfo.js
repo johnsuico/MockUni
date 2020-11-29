@@ -74,7 +74,7 @@ function ClassInfo(props) {
             </table>
           </div>
           
-          {/* <div className="book-table-container">
+          <div className="book-table-container">
             <h3 className="section-title">Books</h3>
             <table className="s2-list-table">
               <thead className="s2-list-table-headers">
@@ -96,7 +96,7 @@ function ClassInfo(props) {
                 }
               </tbody>
             </table>
-          </div> */}
+          </div>
 
           <div className="btn-container-group">
             <div className="btn-container">

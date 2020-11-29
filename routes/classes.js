@@ -94,6 +94,8 @@ router.route('/:id/class').put((req, res) => {
           })
       })
       .catch(err => console.log(err));
+
+    console.log('add student reached');
 });
 
 // ROUTE:   /classes/:id/book
@@ -133,13 +135,6 @@ router.route('/:id').delete((req, res) => {
             { $pull : {"classes": classe._id}}
           )
           .then(console.log('Remove class from student'))
-        });
-        classe.books.map(selected => {
-          Book.findByIdAndUpdate(
-            selected,
-            { $pull: {"classes": classe._id}}
-          )
-          .then (console.log('Remove class from book'))
         });
       } else {
         console.log(err);

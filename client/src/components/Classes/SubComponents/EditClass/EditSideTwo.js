@@ -26,7 +26,7 @@ function EditSideTwo() {
             <h3>Just click "add" and the student will be enrolled in the class</h3>
           </div>
 
-          {/* <div className="add-book-student-container">
+          <div className="add-book-student-container">
             <div className="add-tab-decision">
               <button 
                 className={decision === 'books' ? 'overview-item-active' : 'overview-item-inactive'} 
@@ -39,10 +39,6 @@ function EditSideTwo() {
                   Students
               </button>
             </div>
-          </div> */}
-
-          <div className="addStudent-margin">
-            
           </div>
 
           <AddBookStudent selected={decision}/>
