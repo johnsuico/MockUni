@@ -12,6 +12,7 @@ import Students from './components/Students/Students';
 import Classes from './components/Classes/Classes';
 import Books from './components/Books/Books';
 import EditStudent from './components/Students/SubComponents/EditStudent/EditStudent';
+import EditClass from './components/Classes/SubComponents/EditClass/EditClass';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/students/edit/:id">
             <EditStudent />
+          </Route>
+          <Route path="/classes/edit/:id">
+            <EditClass />
           </Route>
         </Switch>
       </Router>

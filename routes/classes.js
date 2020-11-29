@@ -61,16 +61,16 @@ router.route('/:id').get((req, res) => {
 // DESC :   Update a class
 // REQ  :   PUT
 router.route('/:id').put((req, res) => {
-    const id = req.params.id;
-    const { classTitle, instructor, classID } = req.body;
+  const id = req.params.id;
+  const { classTitle, instructor, classID } = req.body;
   
-    const update = {
-        classTitle, instructor, classID
-    }
+  const update = {
+     classTitle, instructor, classID
+  }
   
-    Classes.findByIdAndUpdate(id, update)
-      .then(classes => res.json({status: 'ok'}))
-      .catch(err => res.json(err));
+  Classes.findByIdAndUpdate(id, update)
+    .then(classes => res.json({status: 'ok'}))
+    .catch(err => res.json(err));
   
 });
 
@@ -124,9 +124,33 @@ router.route('/:id/book').put((req, res) => {
 router.route('/:id').delete((req, res) => {
     const id = req.params.id;
     
+    Classes.findById(id, (err, classe) => {
+      if (classe) {
+        console.log('Found class');
+        classe.students.map(selected => {
+          Student.findByIdAndUpdate(
+            selected,
+            { $pull : {"classes": classe._id}}
+          )
+          .then(console.log('Remove class from student'))
+        });
+        classe.books.map(selected => {
+          Book.findByIdAndUpdate(
+            selected,
+            { $pull: {"classes": student._id}}
+          )
+          .then (console.log('Remove class from book'))
+        });
+      } else {
+        console.log(err);
+      }
+    });
+
     Classes.findByIdAndDelete(id)
-        .then( foundClass => res.send(`Class: ${foundClass.className} has been deleted`))
-        .catch(err => res.send(err));
+      .then(classe => {
+        res.send(`Class: ${classe.classTitle} ${class.classID} has been deleted`);
+      })
+      .catch (err => console.log(err));
 });
 
 module.exports = router;
