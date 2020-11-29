@@ -6,7 +6,7 @@ import './classes.css';
 import './class-sideOne.css';
 import './class-sideTwo.css';
 
-// Import Sidebar Component
+// Import Component
 import Sidebar from '../Sidebar/Sidebar';
 import SideOne from './SubComponents/ClassSideOne';
 import SideTwo from './SubComponents/ClassSideTwo';
@@ -34,13 +34,16 @@ function Classes() {
         <div className="classes">
             <Sidebar active="classes" />
 
-            <div className="classes-container">
+            <div className="class-container">
+                {/* Classes Side One */}
                 <div className="classes-sideOne">
                     <div className="sideOne-header">
                         <h2>Class Management</h2>
                     </div>
                     <SideOne getSelected={getSelected} getToggle={getAddClass}/>
                 </div>
+
+                {/* Classes Side Two */}
                 <div className="classes-sideTwo">
                     <div className="sideTwo-header">
                         <h2>Mock University Name</h2>
