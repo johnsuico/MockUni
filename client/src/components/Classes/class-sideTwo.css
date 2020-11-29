@@ -21,12 +21,16 @@
   margin-top: 10px;
 }
 
-.class-title-instructor {
+.class-title {
   color: var(--main-color);
 }
 
 .class-students-container {
   margin-top: 10px;
+}
+
+.class-instructor {
+  margin-bottom: 10px;
 }
 
 .section-title {

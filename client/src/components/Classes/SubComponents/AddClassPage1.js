@@ -44,13 +44,18 @@ function AddClassPage1(props) {
         <h2 className="add-header-title">Add Class</h2>
         <div className="header-caption-container">
           <h3 className="header-caption">Fill out the following fields</h3>
-          <h3 className="header-caption">You can add instructor, students, and books in edit Class</h3>
+          <h3 className="header-caption">You can add students and books in edit Class</h3>
         </div>
 
         <form className="add-class-form">
           <div className="add-class-form-field">
             <label className="class-form-label">Class Title</label>
             <input type="text" className="class-form-input" onChange={handleClassTitle} value={classTitle} required/>
+          </div>
+
+          <div className="add-class-form-field">
+            <label className="class-form-label">Instructor</label>
+            <input type="text" className="class-form-input" onChange={handleInstructor} value={instructor} required/>
           </div>
 
           <div className="add-class-form-field">

@@ -4,6 +4,7 @@ import Axios from 'axios';
 // Import CSS File
 import './classes.css';
 import './class-sideOne.css';
+import './class-sideTwo.css';
 
 // Import Sidebar Component
 import Sidebar from '../Sidebar/Sidebar';

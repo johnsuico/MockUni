@@ -3,10 +3,23 @@ import Axios from 'axios';
 
 function ClassRow(props) {
 
+  const [students, setStudents] = useState([]);
   const [books, setBooks] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (props.selected === 'students') {
+      Axios.get(`http://localhost:5000/students/${props.id}`)
+        .then(response => {
+          setStudents(response.data);
+          if (response.data !== null) {
+            setLoading(false);
+          } else {
+            setLoading(true);
+          }
+        })
+    }
+
     if (props.selected === 'books') {
       Axios.get(`http://localhost:5000/books/${props.id}`)
         .then(response => {
@@ -24,6 +37,16 @@ function ClassRow(props) {
     return (
       <tr className="classData-row">
         <td className="classData">Loading...</td>
+      </tr>
+    )
+  }
+
+  if (props.selected === "students" && !loading) {
+    return (
+      <tr className="classData-row">
+        <td className="classData">{students.firstName}</td>
+        <td className="classData">{students.lastName}</td>
+        <td className="classData">{students.SID}</td>
       </tr>
     )
   }

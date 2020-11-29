@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 
-import StudentRow from './StudentRow';
 import ClassRow from './ClassRow';
 import { useHistory } from 'react-router-dom';
 
@@ -15,7 +14,7 @@ function ClassInfo(props) {
     Axios.get(`http://localhost:5000/classes/${props.selected}`)
       .then(response => {
         setClass(response.data)
-        if (response.data.students != null && response.data.books != null) {
+        if (response.data.students != null /*&& response.data.books != null*/)  {
           setLoading(false);
         }
       });
@@ -44,14 +43,15 @@ function ClassInfo(props) {
         <div className="header-container">
           <h2 className="header-title">Class In-depth</h2>
           <div className="class-info">
-            <h3 className="class-title-instructor">{classe.classTitle}, {classe.instructor}</h3>
+            <h3 className="class-title">{classe.classTitle}</h3>
             <h3 className="class-id">{classe.classID}</h3>
           </div>
         </div>
         <div className="class-students-container">
           <div className="class-table-container">
+            <h3 className="class-instructor">Class Instructor: {classe.instructor}</h3>
             <h3 className="section-title">Students</h3>
-            {/* Class List Table */}
+            {/* Student List Table */}
             <table className="s2-list-table">
               <thead className="s2-list-table-headers">
                 <tr className="s2-list-header-row">
@@ -67,16 +67,17 @@ function ClassInfo(props) {
                   </tr>
                 :
                   classe.students.map(students => (
-                    <StudentRow key={students} id={students} selected="students"/>
+                    <ClassRow key={students} id={students} selected="students"/>
                   ))
                 }
               </tbody>
             </table>
           </div>
           
+          {/*}
           <div className="book-table-container">
             <h3 className="section-title">Books</h3>
-            {/* Book List Table */}
+            {Book List Table}
             <table className="s2-list-table">
               <thead className="s2-list-table-headers">
                 <tr className="s2-list-header-row">
@@ -98,6 +99,7 @@ function ClassInfo(props) {
               </tbody>
             </table>
           </div>
+          {*/}
 
           <div className="btn-container-group">
             <div className="btn-container">
