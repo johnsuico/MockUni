@@ -19,7 +19,7 @@ function EditSideOne() {
         setClass(response.data);
         setClassTitle(response.data.firstName);
         setInstructor(response.data.lastName);
-        setClassID(response.data.SID);
+        setClassID(response.data.ClassID);
         setLoading(false);
       })
   }, [id])
@@ -67,7 +67,7 @@ function EditSideOne() {
           
           <div className="copntent-header-container">
             <div className="content-header-title-container">
-              <h2>Update Class: <span classTitle="class-title-container">{classe.classTitle}, {classe.instructor}</span></h2>
+              <h2>Update Class: <span className="class-title-container">{classe.classTitle}, {classe.instructor}</span></h2>
             </div>
             <div className="content-header-desc">
               <h3>Here you can change class information</h3>

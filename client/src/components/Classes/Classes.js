@@ -34,7 +34,7 @@ function Classes() {
         <div className="classes">
             <Sidebar active="classes" />
 
-            <div className="classes-container">
+            <div className="class-container">
                 {/* Classes Side One */}
                 <div className="classes-sideOne">
                     <div className="sideOne-header">

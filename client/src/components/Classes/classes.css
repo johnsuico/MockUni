@@ -4,7 +4,7 @@
   display: flex; /* Do not forget to put this in every component container*/
 }
 
-.classes-container {
+.class-container {
   display: flex;
   width: 100vw;
   height: 100vh;

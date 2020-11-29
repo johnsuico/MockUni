@@ -8,10 +8,10 @@ import EditSideTwo from './EditSideTwo';
 
 function EditClass(props) {
   return (
-    <div className="edit">
+    <div className="editClass">
       <Sidebar active="classes"/>
 
-      <div className="class-container">
+      <div className="classes-container">
         <div className="classes-sideOne">
           <div className="sideOne-header">
             <h2>Edit Classes</h2>
