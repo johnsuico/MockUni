@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const studentSchema = require('./student').schema;
+const bookSchema = require('./book').schema;
 
 const classSchema = new mongoose.Schema({
     classTitle: String,
@@ -14,7 +15,7 @@ const classSchema = new mongoose.Schema({
     }],
     books: [{
         type: mongoose.Schema.Types.ObjectId, ref: 'Book'
-      }]
+    }]
 })
 
 const Class = mongoose.model('Class', classSchema);

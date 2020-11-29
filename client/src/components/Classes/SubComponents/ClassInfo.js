@@ -14,7 +14,7 @@ function ClassInfo(props) {
     Axios.get(`http://localhost:5000/classes/${props.selected}`)
       .then(response => {
         setClass(response.data)
-        if (response.data.students != null /*&& response.data.books != null*/)  {
+        if (response.data.students != null && response.data.books != null)  {
           setLoading(false);
         }
       });
@@ -74,10 +74,9 @@ function ClassInfo(props) {
             </table>
           </div>
           
-          {/*}
           <div className="book-table-container">
             <h3 className="section-title">Books</h3>
-            {Book List Table}
+            {/* Book List Table */}
             <table className="s2-list-table">
               <thead className="s2-list-table-headers">
                 <tr className="s2-list-header-row">
@@ -99,7 +98,6 @@ function ClassInfo(props) {
               </tbody>
             </table>
           </div>
-          {*/}
 
           <div className="btn-container-group">
             <div className="btn-container">
