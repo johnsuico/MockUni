@@ -80,14 +80,14 @@ router.route('/:id').put((req, res) => {
 router.route('/:id/class').put((req, res) => {
 
     const id = req.params.id;
-    const SID = req.body.SID;
+    const studentID = req.body.studentID;
   
     Classes.findByIdAndUpdate(id)
       .then(classes => {
-        classes.classes.push(SID);
+        classes.classes.push(studentID);
         classes.save();
   
-        Student.findByIdAndUpdate(SsID)
+        Student.findByIdAndUpdate(studentID)
           .then(newStudent => {
             newStudent.classes.push(id);
             newStudent.save();
@@ -137,7 +137,7 @@ router.route('/:id').delete((req, res) => {
         classe.books.map(selected => {
           Book.findByIdAndUpdate(
             selected,
-            { $pull: {"classes": student._id}}
+            { $pull: {"classes": classe._id}}
           )
           .then (console.log('Remove class from book'))
         });

@@ -3,7 +3,7 @@ import AddBookStudent from './AddBookStudent';
 
 function EditSideTwo() {
 
-  const [decision, setDecision] = useState('students');
+  const [decision, setDecision] = useState('books');
 
   function clickBooks() {
     setDecision('books');
