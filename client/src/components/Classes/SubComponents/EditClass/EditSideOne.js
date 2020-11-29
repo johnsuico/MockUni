@@ -17,9 +17,9 @@ function EditSideOne() {
     Axios.get(`http://localhost:5000/classes/${id}`)
       .then(response => {
         setClass(response.data);
-        setClassTitle(response.data.firstName);
-        setInstructor(response.data.lastName);
-        setClassID(response.data.ClassID);
+        setClassTitle(response.data.classTitle);
+        setInstructor(response.data.instructor);
+        setClassID(response.data.classID);
         setLoading(false);
       })
   }, [id])
@@ -65,9 +65,9 @@ function EditSideOne() {
       <div className="sideOne-container">
         <div className="class-content-container">
           
-          <div className="copntent-header-container">
+          <div className="content-header-container">
             <div className="content-header-title-container">
-              <h2>Update Class: <span className="class-title-container">{classe.classTitle}, {classe.instructor}</span></h2>
+              <h2>Update Class: <span className="class-title-container">{classe.classTitle} [ID: {classe.classID}]</span></h2>
             </div>
             <div className="content-header-desc">
               <h3>Here you can change class information</h3>

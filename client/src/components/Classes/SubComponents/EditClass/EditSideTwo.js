@@ -15,11 +15,11 @@ function EditSideTwo() {
 
   return (
     <div className="sideTwo-container">
-      <div className="student-content-container">
+      <div className="class-content-container">
         <div className="content-header-container">
 
           <div className="content-header-title-container">
-            <h2>Add books or studentks</h2>
+            <h2>Add books or students</h2>
           </div>
           <div className="content-header-desc">
             <h3>Here you can add books and students to the class</h3>

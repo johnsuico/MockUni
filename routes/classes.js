@@ -148,7 +148,7 @@ router.route('/:id').delete((req, res) => {
 
     Classes.findByIdAndDelete(id)
       .then(classe => {
-        res.send(`Class: ${classe.classTitle} ${class.classID} has been deleted`);
+        res.send(`Class: ${classe.classTitle} ${classe.classID} has been deleted`);
       })
       .catch (err => console.log(err));
 });

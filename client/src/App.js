@@ -25,10 +25,10 @@ function App() {
           <Route exact path="/students">
             <Students />
           </Route>
-          <Route path="/classes">
+          <Route exact path="/classes">
             <Classes />
           </Route>
-          <Route path="/books">
+          <Route exact path="/books">
             <Books />
           </Route>
           <Route path="/students/edit/:id">

@@ -12,13 +12,13 @@ function TableList(props) {
 
   useEffect(() => {
     
-    if (props.selected === 'classes') {
+    if (props.selected === 'students') {
       Axios.get(`http://localhost:5000/classes/${id}`)
         .then(res => {
           setClass(res.data.students);
           setLoading(false);
           
-          res.data.classes.map(selected => {
+          res.data.students.map(selected => {
             if (selected === props.objID) {
               setFound(true);
             }

@@ -11,7 +11,7 @@ function EditClass(props) {
     <div className="editClass">
       <Sidebar active="classes"/>
 
-      <div className="classes-container">
+      <div className="class-container">
         <div className="classes-sideOne">
           <div className="sideOne-header">
             <h2>Edit Classes</h2>
