@@ -92,3 +92,8 @@
 .add-btn-disable {
   background-color: var(--main-color-faded);
 }
+
+.addStudent-margin {
+  width: 100%;
+  height: 40px;
+}

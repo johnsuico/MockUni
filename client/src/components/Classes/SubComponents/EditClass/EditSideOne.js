@@ -11,7 +11,7 @@ function EditSideOne() {
   const [instructor, setInstructor] = useState('');
   const [classID, setClassID] = useState('');
 
-  const history = useHistory();
+  // const history = useHistory();
 
   useEffect(() => {
     Axios.get(`http://localhost:5000/classes/${id}`)
