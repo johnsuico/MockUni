@@ -1,0 +1,55 @@
+/* Always need to apply flex to the main container of the component */
+/* This ensure that the sidebar will be to the left of the page */
+.editBook {
+  display: flex; /* Do not forget to put this in every component container*/
+}
+
+.book-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Side One */
+.book-title-container {
+  color: var(--main-color);
+}
+
+.edit-book-form {
+  margin: 5% 0;
+  height: 100%;
+}
+
+.edit-book-form-field {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 0;
+}
+
+.edit-book-form-input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--gray-border-color);
+  height: 40px;
+  font-size: 16px;
+}
+
+.edit-book-form-input:focus {
+  border-bottom: 2px solid var(--main-color);
+}
+
+.edit-book-form-submit-container {
+  margin: 10% 0;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-book-form-submit-btn {
+  border: none;
+  outline: none;
+  color: white;
+  background-color: var(--main-color);
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+}

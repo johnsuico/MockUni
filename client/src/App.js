@@ -13,7 +13,7 @@ import Classes from './components/Classes/Classes';
 import Books from './components/Books/Books';
 import EditStudent from './components/Students/SubComponents/EditStudent/EditStudent';
 import EditClass from './components/Classes/SubComponents/EditClass/EditClass';
-// import EditBook from './components/Books/SubComponents/EditBook/EditBook';
+import EditBook from './components/Books/SubComponents/EditBook/EditBook';
 
 function App() {
   return (
@@ -38,9 +38,9 @@ function App() {
           <Route path="/classes/edit/:id">
             <EditClass />
           </Route>
-          {/* <Route path="/books/edit/:id">
+          <Route path="/books/edit/:id">
             <EditBook />
-          </Route> */}
+          </Route>
         </Switch>
       </Router>
     </div>

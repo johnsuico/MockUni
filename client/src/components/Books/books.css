@@ -6,8 +6,8 @@
 
 /* Start BOOKS-CONTAINER Styling */
 .books-container {
-  /* border: 1px solid red; */
   display: flex;
   width: 100vw;
+  height: 100vh;
 }
 /* End BOOKS-CONTAINER Styling */

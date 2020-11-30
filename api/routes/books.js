@@ -54,6 +54,23 @@ router.route('/:id').get((req, res) => {
 });
 
 // ROUTE:   /books/:id
+// DESC :   Update a book
+// REQ  :   PUT
+router.route('/:id').put((req, res) => {
+  const id = req.params.id;
+  const { title, author, ISBN } = req.body;
+  
+  const update = {
+     title, author, ISBN
+  }
+  
+  Book.findByIdAndUpdate(id, update)
+    .then(book => res.json({status: 'ok'}))
+    .catch(err => res.json(err));
+  
+});
+
+// ROUTE:   /books/:id
 // DESC :   Delete a book from the database
 // REQ  :   DELETE
 router.route('/:id').delete((req, res) => {
