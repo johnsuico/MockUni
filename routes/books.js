@@ -18,6 +18,25 @@ router.route('/').delete((req, res) => {
         .catch(err => res.send(err));
 })
 
+// ROUTE:   /books/:id
+// DESC :   Update a book
+// REQ  :   PUT
+router.route('/:id').put((req, res) => {
+    const id = req.params.id;
+    const { title, author, ISBN } = req.body;
+    
+    const update = {
+        title, author, ISBN
+    }
+    
+    console.log("Udpate submitted for book edit: ", update);
+
+    Book.findByIdAndUpdate(id, update)
+      .then(books => res.json({status: 'ok'}))
+      .catch(err => res.json(err));
+    
+  });
+  
 // ROUTE:   /books/
 // DESC :   Add a new book to database
 // REQ  :   POST

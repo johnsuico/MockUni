@@ -1,0 +1,99 @@
+/* Always need to apply flex to the main container of the component */
+/* This ensure that the sidebar will be to the left of the page */
+.editBook {
+  display: flex; /* Do not forget to put this in every component container*/
+}
+
+.editBook-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Side One */
+.book-title-container {
+  color: var(--main-color);
+}
+
+.edit-book-form {
+  margin: 5% 0;
+  height: 100%;
+}
+
+.edit-book-form-field {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 0;
+}
+
+.edit-book-form-input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--gray-border-color);
+  height: 40px;
+  font-size: 16px;
+}
+
+.edit-book-form-input:focus {
+  border-bottom: 2px solid var(--main-color);
+}
+
+.edit-book-form-submit-container {
+  margin: 10% 0;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-book-form-submit-btn {
+  border: none;
+  outline: none;
+  color: white;
+  background-color: var(--main-color);
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+/* Side Two */
+.add-book-student-container {
+  margin: 5% 0;
+}
+
+.add-tab-decision {
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-table {
+  width: 100%;
+}
+
+.add-table-data {
+  text-align: center;
+}
+
+.add-table-btn {
+  border: none;
+  outline: none;
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.add-btn-active {
+  cursor: pointer;
+}
+
+.add-btn-active:hover {
+  background-color: var(--main-color-hover);
+}
+
+.add-btn-disable {
+  background-color: var(--main-color-faded);
+}
+
+.addStudent-margin {
+  width: 100%;
+  height: 40px;
+}
