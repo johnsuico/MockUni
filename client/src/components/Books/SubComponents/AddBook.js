@@ -54,12 +54,12 @@ function AddBook(props) {
           </div>
 
           <div className="add-book-form-field">
-            <label className="book-form-label">Instructor</label>
+            <label className="book-form-label">Author</label>
             <input type="text" className="book-form-input" onChange={handleAuthor} value={author} required/>
           </div>
 
           <div className="add-book-form-field">
-            <label className="book-form-label">Class ID</label>
+            <label className="book-form-label">ISBN</label>
             <input type="text" className="book-form-input" onChange={handleISBN} value={ISBN} required/>
           </div>
 
