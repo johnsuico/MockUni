@@ -51,9 +51,6 @@ function BookSideOne(props) {
         </thead>
         <tbody>
 
-        <td className="classData">{books.title}</td>
-        <td className="classData">{books.author}</td>
-        <td className="classData">{books.ISBN}</td>
 
           {books.map((book, index) => (
             <TableRow 
