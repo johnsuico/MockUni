@@ -41,9 +41,9 @@ function AddBookStudent(props) {
   } else {
     return (
       <div className="add">
-        <add className="add-container">
+        <div className="add-container">
           <h1>Loading...</h1>
-        </add>
+        </div>
       </div>
     )
   }

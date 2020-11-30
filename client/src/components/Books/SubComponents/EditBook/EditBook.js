@@ -4,6 +4,7 @@ import './editBook.css'
 
 import Sidebar from '../../../Sidebar/Sidebar';
 import EditSideOne from './EditSideOne';
+import EditSideTwo from './EditSideTwo';
 
 function EditBook(props) {
   return(
@@ -22,6 +23,7 @@ function EditBook(props) {
           <div className="sideTwo-header">
             <h2>MockUni</h2>
           </div>
+          <EditSideTwo />
         </div>
       </div>
     </div>

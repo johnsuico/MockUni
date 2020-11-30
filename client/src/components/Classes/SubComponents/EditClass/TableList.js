@@ -22,6 +22,7 @@ function TableList(props) {
               setFound(true);
             }
           });
+          console.log(res.data.students);
 
         });
  
