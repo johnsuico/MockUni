@@ -1,0 +1,58 @@
+.add-book-form {
+  margin: 5% 0;
+}
+
+.add-book-form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+
+.book-form-label {
+  margin-bottom: 3%;
+}
+
+.book-form-input {
+  border: none;
+  border-bottom: 2px solid var(--gray-border-color);
+  height: 40px;
+  outline: none;
+}
+
+.book-form-input:focus {
+  border-bottom: 2px solid var(--main-color);
+}
+
+.add-book-form-btns {
+  padding: 5% 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.book-form-submit {
+  border: none;
+  padding: 3% 5%;
+  color: white;
+  background-color: var(--button-color);
+  border-radius: 30px;
+  font-size: 18px;
+  outline: none;
+}
+
+.book-form-submit:hover {
+  background-color: var(--button-color-hover);
+}
+
+.book-form-cancel {
+  border: none;
+  padding: 3% 5%;
+  color: white;
+  background-color: var(--delete-color);
+  border-radius: 30px;
+  font-size: 18px;
+  outline: none;
+}
+
+.book-form-cancel:hover {
+  background-color: var(--delete-color-hover);
+}

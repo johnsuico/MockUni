@@ -11,17 +11,3 @@
   width: 100vw;
 }
 /* End BOOKS-CONTAINER Styling */
-
-/* Start BOOKS-SIDEONE Styling */
-.books-sideOne {
-  border-right: 1px solid var(--divider-color);
-  flex: 1;
-}
-/* End BOOKS-SIDEONE Styling */
-
-/* Start BOOKS-SIDETWO Styling */
-.books-sideTwo {
-  border-left: 2px solid var(--divider-color);
-  flex: 1;
-}
-/* End BOOKS-SIDETWO Styling */
