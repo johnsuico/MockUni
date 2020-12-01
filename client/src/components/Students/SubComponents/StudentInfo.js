@@ -21,8 +21,11 @@ function StudentInfo(props) {
   }, [props.selected]);
 
   function deleteStudent() {
-    Axios.delete(`http://localhost:5000/students/${props.selected}`)
-    history.go(0);
+    Axios.delete(`https://mockuni-api.herokuapp.com/students/${props.selected}`)
+      .then(res => {
+        console.log(res.data)
+        history.go(0);      
+      });
   }
 
   function editStudent() {

@@ -4,6 +4,8 @@ import { useParams, useHistory } from 'react-router-dom';
 
 function EditSideOne() {
 
+  let history = useHistory();
+
   let { id } = useParams();
   const [classe, setClass] = useState();
   const [loading, setLoading] = useState(true);
@@ -35,13 +37,17 @@ function EditSideOne() {
   }
 
   function onSubmitUpdate(e) {
+    e.preventDefault();
     const update = {
       classTitle: classTitle,
       instructor: instructor,
       classID: classID
     }
-    Axios.put(`http://localhost:5000/classes/${id}`, update)
-      .then(res => console.log(res.data.status))
+    Axios.put(`https://mockuni-api.herokuapp.com/classes/${id}`, update)
+      .then(res => {
+        console.log(res.data.status);
+        history.go(0);
+      })
       .catch(err => console.log(err));
 
   }

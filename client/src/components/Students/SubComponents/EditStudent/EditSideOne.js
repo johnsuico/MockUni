@@ -11,7 +11,7 @@ function EditSideOne() {
   const [lastName, setLastName] = useState('');
   const [SID, setSID] = useState('');
 
-  const history = useHistory();
+  let history = useHistory();
 
   useEffect(() => {
     Axios.get(`https://mockuni-api.herokuapp.com/students/${id}`)
@@ -37,13 +37,17 @@ function EditSideOne() {
   }
 
   function onSubmitUpdate(e) {
+    e.preventDefault();
     const update = {
       firstName: firstName,
       lastName: lastName,
       SID: SID
     }
-    Axios.put(`http://localhost:5000/students/${id}`, update)
-      .then(res => console.log(res.data.status))
+    Axios.put(`https://mockuni-api.herokuapp.com/students/${id}`, update)
+      .then(res => {
+        console.log(res.data.status)
+        history.go(0);
+      })
       .catch(err => console.log(err));
 
   }

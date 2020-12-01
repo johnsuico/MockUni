@@ -21,7 +21,10 @@ function BookInfo(props) {
 
   function deleteBook() {
     Axios.delete(`https://mockuni-api.herokuapp.com/books/${props.selected}`)
-    history.go(0);
+      .then( res => {
+        console.log(res.data);
+        history.go(0);
+      })
   }
 
   function editBook() {

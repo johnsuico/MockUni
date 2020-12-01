@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 import './addClass.css'
 
 function AddClassPage1(props) {
+
+  let history = useHistory();
 
   const [classTitle, setClassTitle] = useState('');
   const [instructor, setInstructor] = useState('');
@@ -22,7 +25,7 @@ function AddClassPage1(props) {
   }
 
   function handleSubmit(e) {
-
+    e.preventDefault();
     const newClass = {
       classTitle,
       instructor,
@@ -31,7 +34,8 @@ function AddClassPage1(props) {
 
     Axios.post('https://mockuni-api.herokuapp.com/classes', newClass)
       .then(res => {
-        console.log(res.data)
+        console.log(res.data);
+        history.go(0);
       })
       .catch(err => console.log('Error: ' + err))
 

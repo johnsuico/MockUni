@@ -22,7 +22,10 @@ function ClassInfo(props) {
 
   function deleteClass() {
     Axios.delete(`https://mockuni-api.herokuapp.com/classes/${props.selected}`)
-    history.go(0);
+      .then(res => {
+        console.log(res.data);
+        history.go(0);
+      });
   }
 
   function editClass() {

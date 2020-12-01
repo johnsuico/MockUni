@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 function EditSideOne() {
 
@@ -10,6 +10,8 @@ function EditSideOne() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [ISBN, setISBN] = useState('');
+
+  let history = useHistory();
 
   useEffect(() => {
     Axios.get(`https://mockuni-api.herokuapp.com/books/${id}`)
@@ -35,13 +37,17 @@ function EditSideOne() {
   }
 
   function onSubmitUpdate(e) {
+    e.preventDefault();
     const update = {
       title,
       author,
       ISBN
     }
-    Axios.put(`http://localhost:5000/books/${id}`, update)
-      .then(res => console.log(res.data.status))
+    Axios.put(`https://mockuni-api.herokuapp.com/books/${id}`, update)
+      .then(res => {
+        console.log(res.data.status);
+        history.go(0);
+      })
       .catch(err => console.log(err));
   }
 

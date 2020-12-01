@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 import './addBook.css'
 
 function AddBook(props) {
+
+  let history = useHistory();
 
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
@@ -22,7 +25,7 @@ function AddBook(props) {
   }
 
   function handleSubmit(e) {
-
+    e.preventDefault();
     const newBook = {
       title,
       author,
@@ -31,7 +34,8 @@ function AddBook(props) {
 
     Axios.post('https://mockuni-api.herokuapp.com/books', newBook)
       .then(res => {
-        console.log(res.data)
+        console.log(res.data);
+        history.go(0);
       })
       .catch(err => console.log('Error: ' + err))
 
