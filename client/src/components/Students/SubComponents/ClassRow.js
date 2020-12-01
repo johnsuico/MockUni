@@ -9,7 +9,7 @@ function ClassRow(props) {
 
   useEffect(() => {
     if (props.selected === 'classes') {
-      Axios.get(`http://localhost:5000/classes/${props.id}`)
+      Axios.get(`https://mockuni-api.herokuapp.com/classes/${props.id}`)
       .then(response => {
         setClasses(response.data);
         if (response.data !== null) {
@@ -21,7 +21,7 @@ function ClassRow(props) {
     }
 
     if (props.selected === 'books') {
-      Axios.get(`http://localhost:5000/books/${props.id}`)
+      Axios.get(`https://mockuni-api.herokuapp.com/books/${props.id}`)
         .then(response => {
           setBooks(response.data);
           if (response.data !== null) {

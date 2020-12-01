@@ -29,7 +29,7 @@ function AddBook(props) {
       ISBN
     }
 
-    Axios.post('http://localhost:5000/books', newBook)
+    Axios.post('https://mockuni-api.herokuapp.com/books', newBook)
       .then(res => {
         console.log(res.data)
       })

@@ -11,13 +11,13 @@ function AddBookClass(props) {
 
   useEffect(() => {
 
-    Axios.get(`http://localhost:5000/classes`)
+    Axios.get(`https://mockuni-api.herokuapp.com/classes`)
       .then(res => {
         setClasses(res.data);
         setLoading(false);
       });
 
-    Axios.get(`http://localhost:5000/books`)
+    Axios.get(`https://mockuni-api.herokuapp.com/books`)
       .then(res => {
         setBooks(res.data);
         setLoading(false);

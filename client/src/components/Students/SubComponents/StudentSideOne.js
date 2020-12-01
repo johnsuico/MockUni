@@ -9,7 +9,7 @@ function StudentSideOne(props) {
   const [addStudent, setAddStudent] = useState(true);
 
   useEffect(() => {
-    Axios.get('http://localhost:5000/students')
+    Axios.get('https://mockuni-api.herokuapp.com/students')
       .then(response => {
           setStudents(response.data)
           setSelectStudent(response.data[0]._id)

@@ -11,7 +11,7 @@ function StudentInfo(props) {
   let history = useHistory();
 
   useEffect(() => {
-    Axios.get(`http://localhost:5000/students/${props.selected}`)
+    Axios.get(`https://mockuni-api.herokuapp.com/students/${props.selected}`)
       .then(response => {
         setStudent(response.data)
         if (response.data.classes != null && response.data.books != null) {

@@ -17,7 +17,7 @@ function Classes() {
     const [toggleClass, setToggleClass] = useState(false);
 
     useEffect(() => {
-        Axios.get('http://localhost:5000/classes')
+        Axios.get('https://mockuni-api.herokuapp.com/classes')
             .then(response => setSelected(response.data[0]._id))
     }, [])
     

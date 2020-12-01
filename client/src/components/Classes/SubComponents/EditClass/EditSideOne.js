@@ -11,10 +11,8 @@ function EditSideOne() {
   const [instructor, setInstructor] = useState('');
   const [classID, setClassID] = useState('');
 
-  // const history = useHistory();
-
   useEffect(() => {
-    Axios.get(`http://localhost:5000/classes/${id}`)
+    Axios.get(`https://mockuni-api.herokuapp.com/classes/${id}`)
       .then(response => {
         setClass(response.data);
         setClassTitle(response.data.classTitle);

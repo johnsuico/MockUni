@@ -12,7 +12,7 @@ function TableList(props) {
 
   useEffect(() => {
     
-    Axios.get(`http://localhost:5000/books/${id}`)
+    Axios.get(`https://mockuni-api.herokuapp.com/books/${id}`)
       .then(res => {
         setBook(res.data.students);
         setLoading(false);
@@ -32,7 +32,7 @@ function TableList(props) {
       studentID: props.objID
     };
 
-    Axios.put(`http://localhost:5000/books/${id}/student`, sendStudent)
+    Axios.put(`https://mockuni-api.herokuapp.com/books/${id}/student`, sendStudent)
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
     

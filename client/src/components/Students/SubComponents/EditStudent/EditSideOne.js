@@ -14,7 +14,7 @@ function EditSideOne() {
   const history = useHistory();
 
   useEffect(() => {
-    Axios.get(`http://localhost:5000/students/${id}`)
+    Axios.get(`https://mockuni-api.herokuapp.com/students/${id}`)
       .then(response => {
         setStudent(response.data);
         setFirstName(response.data.firstName);

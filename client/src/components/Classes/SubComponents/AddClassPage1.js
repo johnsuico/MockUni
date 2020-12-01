@@ -29,7 +29,7 @@ function AddClassPage1(props) {
       classID
     }
 
-    Axios.post('http://localhost:5000/classes', newClass)
+    Axios.post('https://mockuni-api.herokuapp.com/classes', newClass)
       .then(res => {
         console.log(res.data)
       })

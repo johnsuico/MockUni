@@ -13,19 +13,19 @@ function OverviewStudent(props) {
 
   useEffect(() => {
     if (props.selected === 'Students') {
-      Axios.get('http://localhost:5000/students')
+      Axios.get('https://mockuni-api.herokuapp.com/students')
         .then( response => {
           setData(response.data)
         })
     }
     if (props.selected === 'Classes') {
-      Axios.get('http://localhost:5000/classes')
+      Axios.get('https://mockuni-api.herokuapp.com/classes')
         .then( response => {
           setData(response.data)
         })
     }
     if (props.selected === 'Books') {
-      Axios.get('http://localhost:5000/books')
+      Axios.get('https://mockuni-api.herokuapp.com/books')
         .then( response => {
           setData(response.data)
         })

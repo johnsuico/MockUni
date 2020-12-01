@@ -11,7 +11,7 @@ function ClassInfo(props) {
   let history = useHistory();
 
   useEffect(() => {
-    Axios.get(`http://localhost:5000/classes/${props.selected}`)
+    Axios.get(`https://mockuni-api.herokuapp.com/classes/${props.selected}`)
       .then(response => {
         setClass(response.data)
         if (response.data.students != null)  {
@@ -21,7 +21,7 @@ function ClassInfo(props) {
   }, [props.selected]);
 
   function deleteClass() {
-    Axios.delete(`http://localhost:5000/classes/${props.selected}`)
+    Axios.delete(`https://mockuni-api.herokuapp.com/classes/${props.selected}`)
     history.go(0);
   }
 

@@ -29,7 +29,7 @@ function AddStudentPage1(props) {
       SID
     }
 
-    Axios.post('http://localhost:5000/students', newStudent)
+    Axios.post('https://mockuni-api.herokuapp.com/students', newStudent)
       .then(res => {
         console.log(res.data)
       })

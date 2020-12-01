@@ -12,7 +12,7 @@ function EditSideOne() {
   const [ISBN, setISBN] = useState('');
 
   useEffect(() => {
-    Axios.get(`http://localhost:5000/books/${id}`)
+    Axios.get(`https://mockuni-api.herokuapp.com/books/${id}`)
       .then(res => {
         setBook(res.data);
         setTitle(res.data.title);

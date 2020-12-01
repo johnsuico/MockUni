@@ -13,7 +13,7 @@ function TableList(props) {
   useEffect(() => {
     
     if (props.selected === 'classes') {
-      Axios.get(`http://localhost:5000/students/${id}`)
+      Axios.get(`https://mockuni-api.herokuapp.com/students/${id}`)
         .then(res => {
           setStudent(res.data.classes);
           setLoading(false);
@@ -29,7 +29,7 @@ function TableList(props) {
     } 
 
     if (props.selected === 'books') {
-      Axios.get(`http://localhost:5000/students/${id}`)
+      Axios.get(`https://mockuni-api.herokuapp.com/students/${id}`)
         .then(res => {
           setStudent(res.data.books);
           setLoading(false);
@@ -51,7 +51,7 @@ function TableList(props) {
         classID: props.objID
       };
   
-      Axios.put(`http://localhost:5000/students/${id}/class`, sendClass)
+      Axios.put(`https://mockuni-api.herokuapp.com/students/${id}/class`, sendClass)
         .then(res => console.log(res.data))
         .catch(err => console.log(err));
   
@@ -63,7 +63,7 @@ function TableList(props) {
         bookID: props.objID
       };
 
-      Axios.put(`http://localhost:5000/students/${id}/book`, sendBook)
+      Axios.put(`https://mockuni-api.herokuapp.com/students/${id}/book`, sendBook)
         .then(res => console.log(res.data))
         .catch(err => console.log(err));
 

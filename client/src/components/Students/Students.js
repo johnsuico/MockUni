@@ -17,7 +17,7 @@ function Students() {
   const [toggleStudent, setToggleStudent] = useState(false);
 
   useEffect(() => {
-    Axios.get('http://localhost:5000/students')
+    Axios.get('https://mockuni-api.herokuapp.com/students')
       .then(response => setSelected(response.data[0]._id))
   }, [])
 
