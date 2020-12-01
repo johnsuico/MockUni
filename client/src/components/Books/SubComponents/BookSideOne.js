@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
-import TableRow from './TableRow'
+import TableRow from './TableRow';
 
-function BookSideOne(props) {
+function BooksSideOne(props) {
   const [books, setBooks] = useState([]);
   const [selectBook, setSelectBook] = useState([]);
   const [addBook, setAddBook] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Axios.get('http://localhost:5000/books')
+    Axios.get(`http://localhost:5000/books`)
       .then(response => {
-          setBooks(response.data)
-          setSelectBook(response.data[0]._id)
+        setBooks(response.data);
+        setSelectBook(response.data[0]._id);
+        setLoading(false);
       });
-  }, [])
+  }, []);
 
   function onClick(selected) {
     setSelectBook(selected);
@@ -26,12 +28,44 @@ function BookSideOne(props) {
     props.getToggle(addBook);
   }
 
-  return(
+  if (loading) {
+    return(
+      <div className="sideOne-container">
+        <div className="book-content-container">
+          <div className="content-header-container">
+            <div className="content-header-title-container">
+              <h2>List of books</h2>
+            </div>
+            <div className="content-header-desc">
+              <h3>Click on a book for more information</h3>
+            </div>
+          </div>
+        </div>
+
+        <table className="class-list-table">
+          <thead>
+            <tr>
+              <th className="tableHeader">#</th>
+              <th className="tableHeader">Title</th>
+              <th className="tableHeader">Author</th>
+              <th className="tableHeader">ISBN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="tableHeader">Loading</tr>
+          </tbody>
+        </table>
+
+      </div>
+    )
+  }
+
+  return (
     <div className="sideOne-container">
       <div className="book-content-container">
         <div className="content-header-container">
           <div className="content-header-title-container">
-            <h2>List of Books</h2>
+            <h2>List of books</h2>
             <button onClick={toggleAdd}>Add Book</button>
           </div>
           <div className="content-header-desc">
@@ -40,34 +74,33 @@ function BookSideOne(props) {
         </div>
       </div>
 
-      <table className="book-list-table">
+      <table className="class-list-table">
         <thead>
           <tr>
             <th className="tableHeader">#</th>
-            <th className="tableHeader">Book Name</th>
+            <th className="tableHeader">Title</th>
             <th className="tableHeader">Author</th>
-            <th className="tableHeader">Book ID</th>
+            <th className="tableHeader">ISBN</th>
           </tr>
         </thead>
         <tbody>
-
-
           {books.map((book, index) => (
             <TableRow 
-              index={index+1} 
-              title={book.title} 
-              author={book.author} 
-              ISBN={book.ISBN} 
+              index={index+1}
+              title={book.title}
+              author={book.author}
+              ISBN={book.ISBN}
               ID={book._id}
-              key={book._id} 
-              onClickParent={onClick} 
-              selected={selectBook}/>
+              key={book._id}
+              onClickParent={onClick}
+              selected={selectBook}
+            />
           ))}
-        </tbody>
+        </tbody> 
       </table>
-    
     </div>
   )
+
 }
 
-export default BookSideOne;
+export default BooksSideOne;

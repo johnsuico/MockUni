@@ -12,8 +12,8 @@ import Students from './components/Students/Students';
 import Classes from './components/Classes/Classes';
 import Books from './components/Books/Books';
 import EditStudent from './components/Students/SubComponents/EditStudent/EditStudent';
-import EditBook from './components/Books/SubComponents/EditBook';
 import EditClass from './components/Classes/SubComponents/EditClass/EditClass';
+import EditBook from './components/Books/SubComponents/EditBook/EditBook';
 
 function App() {
   return (
@@ -35,9 +35,11 @@ function App() {
           <Route path="/students/edit/:id">
             <EditStudent />
           </Route>
-          <Route path="/books/edit/:id" component={EditBook} />
           <Route path="/classes/edit/:id">
             <EditClass />
+          </Route>
+          <Route path="/books/edit/:id">
+            <EditBook />
           </Route>
         </Switch>
       </Router>

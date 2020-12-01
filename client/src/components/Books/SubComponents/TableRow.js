@@ -8,13 +8,11 @@ function TableRow(props) {
 
   return (
     <tr className={props.selected === props.ID ? "tableRow-selected" : "tableRow"} onClick={onClick}>
-            <td className="tableData">{props.index}</td>
-
+      <td className="tableData">{props.index}</td>
       <td className="tableData">{props.title}</td>
-        <td className="tableData">{props.author}</td>
-        <td className="tableData">{props.ISBN}</td>
-
-    </tr>  
+      <td className="tableData">{props.author}</td>
+      <td className="tableData">{props.ISBN}</td>
+    </tr>
   )
 }
 

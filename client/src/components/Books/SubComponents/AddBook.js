@@ -3,7 +3,7 @@ import Axios from 'axios';
 
 import './addBook.css'
 
-function AddBookPage1(props) {
+function AddBook(props) {
 
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
@@ -44,24 +44,27 @@ function AddBookPage1(props) {
         <h2 className="add-header-title">Add Book</h2>
         <div className="header-caption-container">
           <h3 className="header-caption">Fill out the following fields</h3>
+          <h3 className="header-caption">You can add students in edit Book</h3>
         </div>
 
         <form className="add-book-form">
           <div className="add-book-form-field">
-            <label className="book-form-label">Title</label>
+            <label className="book-form-label">Book Title</label>
             <input type="text" className="book-form-input" onChange={handleTitle} value={title} required/>
           </div>
+
           <div className="add-book-form-field">
             <label className="book-form-label">Author</label>
             <input type="text" className="book-form-input" onChange={handleAuthor} value={author} required/>
           </div>
+
           <div className="add-book-form-field">
             <label className="book-form-label">ISBN</label>
             <input type="text" className="book-form-input" onChange={handleISBN} value={ISBN} required/>
           </div>
 
           <div className="add-book-form-btns">
-            <input type="submit" className="book-form-submit" value="Create Book" onClick={handleSubmit}/>
+            <input type="submit" className="book-form-submit" value="Add Book" onClick={handleSubmit}/>
             <button className="book-form-cancel">Cancel</button>
           </div>
         </form>
@@ -71,4 +74,4 @@ function AddBookPage1(props) {
   )
 }
 
-export default AddBookPage1;
+export default AddBook;

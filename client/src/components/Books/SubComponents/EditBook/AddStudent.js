@@ -3,20 +3,17 @@ import Axios from 'axios';
 
 import TableList from './TableList';
 
-function AddBookStudent(props) {
-
+function AddStudent(props) {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     Axios.get(`http://localhost:5000/students`)
       .then(res => {
         setStudents(res.data);
         setLoading(false);
-      });
-
-  }, []);
+      })
+  }, [])
 
   if (!loading) {
     return (
@@ -32,7 +29,7 @@ function AddBookStudent(props) {
               </tr>
             </thead>
             {students.map((student, index) => (
-              <TableList key={student._id} index={index+1} title={student.firstName} instructor={student.lastName} ID={student.SID} objID={student._id}/>
+              <TableList key={student._id} index={index+1} title={student.firstName} author={student.lastName} ISBN={student.SID} objID={student._id} />
             ))}
           </table>
         </div>
@@ -49,4 +46,4 @@ function AddBookStudent(props) {
   }
 }
 
-export default AddBookStudent;
+export default AddStudent;

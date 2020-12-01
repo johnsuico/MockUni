@@ -1,19 +1,20 @@
 import React from 'react';
 
-import AddBookPage1 from './AddBookPage1';
-import BookInfo from "./BookInfo";
+import BookInfo from './BookInfo';
+import AddBook from './AddBook';
 
 function BookSideTwo(props) {
 
   return (
     <div className="sideTwo-container">
       {!props.toggleAdd ?
-        <BookInfo selected={props.selected}/>
+        <BookInfo selected={props.selected} />
         :
-        <AddBookPage1 />
+        <AddBook />
       }
     </div>
   )
+
 }
 
 export default BookSideTwo;
