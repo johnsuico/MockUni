@@ -32,7 +32,7 @@ function AddStudentPage1(props) {
       SID
     }
 
-    Axios.post('https://mockuni-api.herokuapp.com/students/', newStudent)
+    Axios.post('http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/students/', newStudent)
       .then(res => {
         console.log(res.data);
         history.go(0);

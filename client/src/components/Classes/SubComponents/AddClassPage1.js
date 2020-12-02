@@ -32,7 +32,7 @@ function AddClassPage1(props) {
       classID
     }
 
-    Axios.post('https://mockuni-api.herokuapp.com/classes', newClass)
+    Axios.post('http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/classes', newClass)
       .then(res => {
         console.log(res.data);
         history.go(0);

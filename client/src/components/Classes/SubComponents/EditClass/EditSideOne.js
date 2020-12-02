@@ -14,7 +14,7 @@ function EditSideOne() {
   const [classID, setClassID] = useState('');
 
   useEffect(() => {
-    Axios.get(`https://mockuni-api.herokuapp.com/classes/${id}`)
+    Axios.get(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/classes/${id}`)
       .then(response => {
         setClass(response.data);
         setClassTitle(response.data.classTitle);
@@ -43,7 +43,7 @@ function EditSideOne() {
       instructor: instructor,
       classID: classID
     }
-    Axios.put(`https://mockuni-api.herokuapp.com/classes/${id}`, update)
+    Axios.put(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/classes/${id}`, update)
       .then(res => {
         console.log(res.data.status);
         history.go(0);

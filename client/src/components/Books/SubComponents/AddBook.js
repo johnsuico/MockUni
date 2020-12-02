@@ -32,7 +32,7 @@ function AddBook(props) {
       ISBN
     }
 
-    Axios.post('https://mockuni-api.herokuapp.com/books', newBook)
+    Axios.post('http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/books', newBook)
       .then(res => {
         console.log(res.data);
         history.go(0);

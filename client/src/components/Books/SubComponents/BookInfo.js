@@ -10,7 +10,7 @@ function BookInfo(props) {
   let history = useHistory();
 
   useEffect(() => {
-    Axios.get(`https://mockuni-api.herokuapp.com/books/${props.selected}`)
+    Axios.get(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/books/${props.selected}`)
       .then(res => {
         setBook(res.data);
         if (res.data.students != null) {
@@ -20,7 +20,7 @@ function BookInfo(props) {
   }, [props.selected]);
 
   function deleteBook() {
-    Axios.delete(`https://mockuni-api.herokuapp.com/books/${props.selected}`)
+    Axios.delete(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/books/${props.selected}`)
       .then( res => {
         console.log(res.data);
         history.go(0);

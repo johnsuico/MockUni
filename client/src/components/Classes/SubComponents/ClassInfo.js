@@ -11,7 +11,7 @@ function ClassInfo(props) {
   let history = useHistory();
 
   useEffect(() => {
-    Axios.get(`https://mockuni-api.herokuapp.com/classes/${props.selected}`)
+    Axios.get(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/classes/${props.selected}`)
       .then(response => {
         setClass(response.data)
         if (response.data.students != null)  {
@@ -21,7 +21,7 @@ function ClassInfo(props) {
   }, [props.selected]);
 
   function deleteClass() {
-    Axios.delete(`https://mockuni-api.herokuapp.com/classes/${props.selected}`)
+    Axios.delete(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/classes/${props.selected}`)
       .then(res => {
         console.log(res.data);
         history.go(0);

@@ -14,7 +14,7 @@ function EditSideOne() {
   let history = useHistory();
 
   useEffect(() => {
-    Axios.get(`https://mockuni-api.herokuapp.com/students/${id}`)
+    Axios.get(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/students/${id}`)
       .then(response => {
         setStudent(response.data);
         setFirstName(response.data.firstName);
@@ -43,7 +43,7 @@ function EditSideOne() {
       lastName: lastName,
       SID: SID
     }
-    Axios.put(`https://mockuni-api.herokuapp.com/students/${id}`, update)
+    Axios.put(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/students/${id}`, update)
       .then(res => {
         console.log(res.data.status)
         history.go(0);

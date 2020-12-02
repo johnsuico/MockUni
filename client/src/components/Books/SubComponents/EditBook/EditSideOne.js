@@ -14,7 +14,7 @@ function EditSideOne() {
   let history = useHistory();
 
   useEffect(() => {
-    Axios.get(`https://mockuni-api.herokuapp.com/books/${id}`)
+    Axios.get(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/books/${id}`)
       .then(res => {
         setBook(res.data);
         setTitle(res.data.title);
@@ -43,7 +43,7 @@ function EditSideOne() {
       author,
       ISBN
     }
-    Axios.put(`https://mockuni-api.herokuapp.com/books/${id}`, update)
+    Axios.put(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/books/${id}`, update)
       .then(res => {
         console.log(res.data.status);
         history.go(0);
