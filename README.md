@@ -134,6 +134,12 @@ This project uses the MERN stack
     - ECR was used to create a repository that stored the docker iamge
     - ECS instance was used to host the container
 
+## System Diagram ##
+![System Diagram](Demo/System-Diagram.png)
+
+## Database Schema ##
+![Database Schema](Demo/Database-Schema-Diagrma.png)
+
 ## Dependencies
 
 - Backend
