@@ -1,11 +1,28 @@
+<img src="Demo/dash-inprogress.PNG" alt="MockUni Logo" title="MockUni" align="right" height="60">
+
 # MockUni
 CMPE172 Project. Mock Uni is a university and library management system that allows an admin user to view, add, edit, and delete students, books, and classes.
 
-![Dashboard Inprogress Screenshot](Demo/dash-inprogress.PNG)
+University: San Jose State University
+
+Class: CMPE 172 Section 01 - Enterprise Software
+
+Team Members:
+  - John Suico (012091885)
+    - Student frontend and backend
+    - Docker
+    - Deployment to AWS
+  - Atul Murali (012015562)
+    - Book frontend and backend
+  - Steven Vuong (011363560)
+    - Class frontend and backend
+
+![Dashboard Screenshot](Demo/dash-inprogress.PNG)
 
 ## Requirements
 - [Download Node](https://nodejs.org/en/download/)
 - [Download Git](https://git-scm.com/downloads)
+- [Download Docker](https://www.docker.com/products/docker-desktop)
 
 ## Cloning the Repo
 The following instructions will place the repo on your desktop. Feel free to put the repo anywhere you want.
@@ -30,30 +47,55 @@ The following instructions will place the repo on your desktop. Feel free to put
     ``` git clone https://github.com/johnsuico/MockUni.git ```
   - Go into MockUni Directory
 
-## Installing the packages
-The following instructions will work on Windows/Mac/Linux
+## Running the web application locally using docker
+The following instructions will teach you how to run the set up scripts for both Windows PCs and Mac machines to run the application with docker.
 
-- Go into MockUni directory
+Both machines are similar in their steps to run the scripts
 
-  ``` cd MockUni ```
-  - Install the neccessary packages for backend
+- Windows
+  - After cloning the repository, open the MockUni folder
+  - Go into the scripts folder
+  - Open the Windows Scripts folder
+  - Double click on the following scripts in any order:
+    - `MockUni-Clent-Build-Script.bat`
+    - `MockUni-Api-Build-Script.bat`
+  - You have now successfully created docker images in your machine! Now in order to run both of the images at the same time you will now have to double click on the following script:
+    - `MockUni-Compose-All.bat`
 
-    ``` npm install ```
-  - Go into Client directory
+- Mac
+  - After cloning the repository, open the MockUni folder
+  - Go into the scripts folder
+  - Open the Mac Scripts folder
+  - Before running any of the scripts there is an extra step we have to do in order to make the scripts executables
+    - Read the `readme.txt` inside the Mac Scripts folder or continue reading to see similar information
+    - cd into the Mac Scripts folder
+      Example (in my case):
 
-    ``` cd client ```
-  - Install the neccessary packages for react
+      `cd Projects/MockUni/Scripts/Mac\ Scripts/`
 
-    ``` npm install ```
-  - Go back up one folder
+    - Run the following commands in your terminal of choice
+      - `chmod u+x MockUni-Client-Build-Script.command`
+      - `chmod u+x MockUni-Api-Build-Script.command`
+      - `chmod u+x MockUni-Compose.command`
+    - You are now able to run the scripts
+  - You have now successfully created docker images using the scripts. To run both images at the same time double click on the following script:
+    - `Mockuni-Compose.command`
 
-    ``` cd .. ```
-  - Start the application in development
+### Notes about running locally
+The react image is not connected to the local instance of the API. It is connect to the AWS instance online.
 
-    ``` npm run dev ```
-  - OR Start the application in production
+When starting the images, the react client will take some time before it is ready. It will show warning about 404s and then say `starting the development server`. Wait until that is done and then you'll be able to use the react client in your browser
 
-    ``` npm start ```
+### Accessing the local instance
+- Frontend
+  - To access the react client open your browser of choice
+  - Go to
+    - `http://localhost:3000/`
+
+- Backend
+  - To access the API open your browser of choice
+  - Go to
+    - `http://localhost:5000/`
 
 ## Tech Stack
 This project uses the MERN stack
@@ -70,18 +112,12 @@ This project uses the MERN stack
 ## Dependencies
 
 - Backend
-  - chart.js
-    - To create bar graphs for analytics
-  - Concurrently
-    - To run backend and frontend at the same time
   - CORS
     - To allow for resource sharing between backend and frontend
   - Express
     - Backend framework
   - Mongoose
     - To handle database connections and queries
-  - react-chartjs-2
-    - To create bar graphs for analytics
 
 - Backend Dev
   - Nodemon
@@ -94,3 +130,7 @@ This project uses the MERN stack
     - To use icons in our applicaiton
   - react-router-dom
     - To create different pages for our application
+  - react-chartjs-2
+    - To create bar graphs for analytics
+  - chart.js
+    - To create bar graphs for analytics
