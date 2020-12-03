@@ -10,7 +10,7 @@ function BooksSideOne(props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Axios.get(`https://mockuni-api.herokuapp.com/books`)
+    Axios.get(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/books`)
       .then(response => {
         setBooks(response.data);
         setSelectBook(response.data[0]._id);

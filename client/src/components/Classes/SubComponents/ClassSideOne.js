@@ -9,7 +9,7 @@ function ClassSideOne(props) {
   const [addClass, setAddClass] = useState(true);
 
   useEffect(() => {
-    Axios.get('https://mockuni-api.herokuapp.com/classes')
+    Axios.get('http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/classes')
       .then(response => {
           setClasses(response.data)
           setSelectClass(response.data[0]._id)

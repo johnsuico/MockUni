@@ -10,7 +10,7 @@ function AddBookStudent(props) {
 
   useEffect(() => {
 
-    Axios.get(`https://mockuni-api.herokuapp.com/students`)
+    Axios.get(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/students`)
       .then(res => {
         setStudents(res.data);
         setLoading(false);

@@ -51,7 +51,7 @@ function TableList(props) {
         classID: props.objID
       };
   
-      Axios.put(`https://mockuni-api.herokuapp.com/students/${id}/class`, sendClass)
+      Axios.put(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/students/${id}/class`, sendClass)
         .then(res => console.log(res.data))
         .catch(err => console.log(err));
   
@@ -63,7 +63,7 @@ function TableList(props) {
         bookID: props.objID
       };
 
-      Axios.put(`https://mockuni-api.herokuapp.com/students/${id}/book`, sendBook)
+      Axios.put(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/students/${id}/book`, sendBook)
         .then(res => console.log(res.data))
         .catch(err => console.log(err));
 

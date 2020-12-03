@@ -17,7 +17,7 @@ function Books() {
   const [toggleBook, setToggleBook] = useState(false);
 
   useEffect(() => {
-    Axios.get(`https://mockuni-api.herokuapp.com/books`)
+    Axios.get(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/books`)
       .then(res => setSelected(res.data[0]._id))
   }, [])
 
