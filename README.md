@@ -33,6 +33,8 @@ Team Members:
   - [Notes](#notes-about-running-locally)
   - [Browser Acess](#accessing-the-local-instance)
 - [Tech Stack](#tech-stack)
+- [System Diagram](#system-diagram)
+- [Database Schema](#database-schema)
 - [Dependencies](#dependencies)
 
 ## Requirements
@@ -138,7 +140,7 @@ This project uses the MERN stack
 ![System Diagram](Demo/System-Diagram.png)
 
 ## Database Schema ##
-![Database Schema](Demo/Database-Schema-Diagrma.png)
+![Database Schema](Demo/Database-Schema-Diagram.png)
 
 ## Dependencies
 
