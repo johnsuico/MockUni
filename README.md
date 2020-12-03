@@ -102,12 +102,21 @@ This project uses the MERN stack
 
 - MongoDB
   - Our database
+  - Created using MongoDB Atlas and hosted on AWS
 - Express
   - Node web application framework
 - React
   - Frontend library
 - Node
   - Javascript runtime
+- Docker
+  - Project requirement
+  - To run each tier inside a docker image
+- AWS
+  - Hosting service for our application
+  - Used ECR and ECS
+    - ECR was used to create a repository that stored the docker iamge
+    - ECS instance was used to host the container
 
 ## Dependencies
 
