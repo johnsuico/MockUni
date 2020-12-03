@@ -28,8 +28,8 @@ Team Members:
   - [Windows](#windows)
   - [Mac / Linux](#mac/linux)
 - [Docker installation](#running-the-web-application-locally-using-docker)
-  - [Windows](#windows)
-  - [Mac](#mac)
+  - [Windows](#windows-scripts)
+  - [Mac](#mac-scripts)
   - [Notes](#notes-about-running-locally)
   - [Browser Acess](#accessing-the-local-instance)
 - [Tech Stack](#tech-stack)
@@ -68,7 +68,7 @@ The following instructions will teach you how to run the set up scripts for both
 
 Both machines are similar in their steps to run the scripts
 
-### Windows ###
+### Windows Scripts ###
 - After cloning the repository, open the MockUni folder
 - Go into the scripts folder
 - Open the Windows Scripts folder
@@ -78,7 +78,7 @@ Both machines are similar in their steps to run the scripts
 - You have now successfully created docker images in your machine! Now in order to run both of the images at the same time you will now have to double click on the following script:
   - `MockUni-Compose-All.bat`
 
-### Mac ###
+### Mac Scripts ###
 - After cloning the repository, open the MockUni folder
 - Go into the scripts folder
 - Open the Mac Scripts folder
