@@ -21,7 +21,7 @@ To run both of the containers just use the MockUni-Compose.command script and th
 
 NOTE: The client side is not connected to the local instance of the API anymore. It is connected to the online API hosted on AWS
 
-NOTE: When you start up the MockUni-Compose.command script, it will take some time before the react client is ready to go. It will show warnings about 404s and then say "starting the development server" use wait until that is gone.
+NOTE: When you start up the MockUni-Compose.command script, it will take some time before the react client is ready to go. It will show warnings about 404s and then say "starting the development server" wait until that is gone.
 
 To access the servers go to the web browser of your choice and go to:
 	http://localhost:3000/

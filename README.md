@@ -3,6 +3,8 @@
 # MockUni
 CMPE172 Project. Mock Uni is a university and library management system that allows an admin user to view, add, edit, and delete students, books, and classes.
 
+The main goal of this project was to create a an easy to use and visually appealing system. We noticed that a lot of management systems are not that user firendly. THey give the user too many options and that could confuse the user. We know that each option serves a purpose, but for our project we wanted to keep it simple with a straight forward design.
+
 University: San Jose State University
 
 Class: CMPE 172 Section 01 - Enterprise Software
@@ -17,7 +19,21 @@ Team Members:
   - Steven Vuong (011363560)
     - Class frontend and backend
 
+
 ![Dashboard Screenshot](Demo/dash-inprogress.PNG)
+
+## Table of Contents
+- [Requirements](#requirements)
+- [Cloning the Repository](#cloning-the-repo)
+  - [Windows](#windows)
+  - [Mac / Linux](#mac/linux)
+- [Docker installation](#running-the-web-application-locally-using-docker)
+  - [Windows](#windows)
+  - [Mac](#mac)
+  - [Notes](#notes-about-running-locally)
+  - [Browser Acess](#accessing-the-local-instance)
+- [Tech Stack](#tech-stack)
+- [Dependencies](#dependencies)
 
 ## Requirements
 - [Download Node](https://nodejs.org/en/download/)
@@ -27,59 +43,59 @@ Team Members:
 ## Cloning the Repo
 The following instructions will place the repo on your desktop. Feel free to put the repo anywhere you want.
 
-- **Windows**
-  - Open Powershell or CMD (Powershell Preferred)
-  - Go into desktop directory 
+### Windows ###
+- Open Powershell or CMD (Powershell Preferred)
+- Go into desktop directory 
 
-    ``` cd Desktop  ```
-  - Clone the MockUni repo
+  ``` cd Desktop  ```
+- Clone the MockUni repo
 
-    ``` git clone https://github.com/johnsuico/MockUni.git ```
-  - Go into MockUni Directory
+  ``` git clone https://github.com/johnsuico/MockUni.git ```
+- Go into MockUni Directory
 
-- **Mac / Linux**
-  - Open Terminal
-  - Go into desktop directory
+### Mac / Linux ###
+- Open Terminal
+- Go into desktop directory
 
-    ``` cd Desktop  ```
-  - Clone the MockUni repo
+  ``` cd Desktop  ```
+- Clone the MockUni repo
 
-    ``` git clone https://github.com/johnsuico/MockUni.git ```
-  - Go into MockUni Directory
+  ``` git clone https://github.com/johnsuico/MockUni.git ```
+- Go into MockUni Directory
 
 ## Running the web application locally using docker
 The following instructions will teach you how to run the set up scripts for both Windows PCs and Mac machines to run the application with docker.
 
 Both machines are similar in their steps to run the scripts
 
-- Windows
-  - After cloning the repository, open the MockUni folder
-  - Go into the scripts folder
-  - Open the Windows Scripts folder
-  - Double click on the following scripts in any order:
-    - `MockUni-Clent-Build-Script.bat`
-    - `MockUni-Api-Build-Script.bat`
-  - You have now successfully created docker images in your machine! Now in order to run both of the images at the same time you will now have to double click on the following script:
-    - `MockUni-Compose-All.bat`
+### Windows ###
+- After cloning the repository, open the MockUni folder
+- Go into the scripts folder
+- Open the Windows Scripts folder
+- Double click on the following scripts in any order:
+  - `MockUni-Clent-Build-Script.bat`
+  - `MockUni-Api-Build-Script.bat`
+- You have now successfully created docker images in your machine! Now in order to run both of the images at the same time you will now have to double click on the following script:
+  - `MockUni-Compose-All.bat`
 
-- Mac
-  - After cloning the repository, open the MockUni folder
-  - Go into the scripts folder
-  - Open the Mac Scripts folder
-  - Before running any of the scripts there is an extra step we have to do in order to make the scripts executables
-    - Read the `readme.txt` inside the Mac Scripts folder or continue reading to see similar information
-    - cd into the Mac Scripts folder
-      Example (in my case):
+### Mac ###
+- After cloning the repository, open the MockUni folder
+- Go into the scripts folder
+- Open the Mac Scripts folder
+- Before running any of the scripts there is an extra step we have to do in order to make the scripts executables
+  - Read the `readme.txt` inside the Mac Scripts folder or continue reading to see similar information
+  - cd into the Mac Scripts folder
+    Example (in my case):
 
-      `cd Projects/MockUni/Scripts/Mac\ Scripts/`
+    `cd Projects/MockUni/Scripts/Mac\ Scripts/`
 
-    - Run the following commands in your terminal of choice
-      - `chmod u+x MockUni-Client-Build-Script.command`
-      - `chmod u+x MockUni-Api-Build-Script.command`
-      - `chmod u+x MockUni-Compose.command`
-    - You are now able to run the scripts
-  - You have now successfully created docker images using the scripts. To run both images at the same time double click on the following script:
-    - `Mockuni-Compose.command`
+  - Run the following commands in your terminal of choice
+    - `chmod u+x MockUni-Client-Build-Script.command`
+    - `chmod u+x MockUni-Api-Build-Script.command`
+    - `chmod u+x MockUni-Compose.command`
+  - You are now able to run the scripts
+- You have now successfully created docker images using the scripts. To run both images at the same time double click on the following script:
+  - `Mockuni-Compose.command`
 
 ### Notes about running locally
 The react image is not connected to the local instance of the API. It is connect to the AWS instance online.
