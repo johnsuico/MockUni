@@ -26,7 +26,7 @@ Team Members:
 - [Requirements](#requirements)
 - [Cloning the Repository](#cloning-the-repo)
   - [Windows](#windows)
-  - [Mac / Linux](#mac/linux)
+  - [Mac](#mac)
 - [Docker installation](#running-the-web-application-locally-using-docker)
   - [Windows](#windows-scripts)
   - [Mac](#mac-scripts)
@@ -53,7 +53,7 @@ The following instructions will place the repo on your desktop. Feel free to put
   ``` git clone https://github.com/johnsuico/MockUni.git ```
 - Go into MockUni Directory
 
-### Mac / Linux ###
+### Mac ###
 - Open Terminal
 - Go into desktop directory
 
