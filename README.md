@@ -6,7 +6,7 @@ CMPE172 Project. Mock Uni is a university and library management system that all
 The main goal of this project was to create a an easy to use and visually appealing system. We noticed that a lot of management systems are not that user firendly. THey give the user too many options and that could confuse the user. We know that each option serves a purpose, but for our project we wanted to keep it simple with a straight forward design.
 
 Public AWS Link for Testing:
-http://ec2-13-57-14-177.us-west-1.compute.amazonaws.com:3000/
+http://ec2-13-56-78-24.us-west-1.compute.amazonaws.com:3000/
 
 University: San Jose State University
 
@@ -38,6 +38,10 @@ Team Members:
 - [Tech Stack](#tech-stack)
 - [System Diagram](#system-diagram)
 - [Database Schema](#database-schema)
+- [Screen Shots](#demo-screenshots)
+  - [Student Pages](#student-page)
+  - [Class Pages](#class-page)
+  - [Book Pages](#books-page)
 - [Dependencies](#dependencies)
 
 ## Requirements
@@ -144,6 +148,35 @@ This project uses the MERN stack
 
 ## Database Schema ##
 ![Database Schema](Demo/Database-Schema-Diagram.png)
+
+## Demo Screenshots ##
+
+### Student Page ###
+![Student Page](Demo/student-page.png)
+
+#### Add Student Page ####
+![Add Student Page](Demo/add-student.png)
+
+#### Edit Student Page ####
+![Edit Student Page](Demo/edit-student.png)
+
+### Class Page ###
+![Class Page](Demo/class-page.png)
+
+#### Add Class Page ####
+![Add Student Page](Demo/add-class.png)
+
+#### Edit Class Page ####
+![Edit Student Page](Demo/edit-class.png)
+
+### Books Page ###
+![Book Page](Demo/books-page.png)
+
+#### Add Book Page ####
+![Books Page](Demo/add-book.png)
+
+#### Edit Book Page ####
+![Books Page](Demo/edit-book.png)
 
 ## Dependencies
 
