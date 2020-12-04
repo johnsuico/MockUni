@@ -70,7 +70,7 @@ function EditSideOne() {
 
           <div className="content-header-container">
             <div className="content-header-title-container">
-              <h2>UpdateBook: <span className="class-title-container">{book.title} ISBN: {book.ISBN}</span></h2>
+              <h2>Update Book: <span className="class-title-container">{book.title} ISBN: {book.ISBN}</span></h2>
             </div>
             <div className="content-header-desc">
               <h3>Here you can change book information</h3>
