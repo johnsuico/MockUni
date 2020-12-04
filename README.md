@@ -6,7 +6,7 @@ CMPE172 Project. Mock Uni is a university and library management system that all
 The main goal of this project was to create a an easy to use and visually appealing system. We noticed that a lot of management systems are not that user firendly. THey give the user too many options and that could confuse the user. We know that each option serves a purpose, but for our project we wanted to keep it simple with a straight forward design.
 
 Public AWS Link for Testing:
-http://ec2-3-101-135-111.us-west-1.compute.amazonaws.com:3000/
+http://ec2-13-57-14-177.us-west-1.compute.amazonaws.com:3000/
 
 University: San Jose State University
 
