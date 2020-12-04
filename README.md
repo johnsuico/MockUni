@@ -170,7 +170,7 @@ This project uses the MERN stack
 ![Edit Student Page](Demo/edit-class.PNG)
 
 ### Books Page ###
-![Book Page](Demo/books-page.PNG)
+![Book Page](Demo/book-page.PNG)
 
 #### Add Book Page ####
 ![Books Page](Demo/add-book.PNG)
