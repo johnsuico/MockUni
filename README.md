@@ -155,28 +155,28 @@ This project uses the MERN stack
 ![Student Page](Demo/student-page.png)
 
 #### Add Student Page ####
-![Add Student Page](Demo/add-student.png)
+![Add Student Page](Demo/add-student.PNG)
 
 #### Edit Student Page ####
-![Edit Student Page](Demo/edit-student.png)
+![Edit Student Page](Demo/edit-student.PNG)
 
 ### Class Page ###
-![Class Page](Demo/class-page.png)
+![Class Page](Demo/class-page.PNG)
 
 #### Add Class Page ####
-![Add Student Page](Demo/add-class.png)
+![Add Student Page](Demo/add-class.PNG)
 
 #### Edit Class Page ####
-![Edit Student Page](Demo/edit-class.png)
+![Edit Student Page](Demo/edit-class.PNG)
 
 ### Books Page ###
-![Book Page](Demo/books-page.png)
+![Book Page](Demo/books-page.PNG)
 
 #### Add Book Page ####
-![Books Page](Demo/add-book.png)
+![Books Page](Demo/add-book.PNG)
 
 #### Edit Book Page ####
-![Books Page](Demo/edit-book.png)
+![Books Page](Demo/edit-book.PNG)
 
 ## Dependencies
 
