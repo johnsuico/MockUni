@@ -13,7 +13,7 @@ function TableList(props) {
   useEffect(() => {
     
     if (props.selected === 'classes') {
-      Axios.get(`https://mockuni-api.herokuapp.com/students/${id}`)
+      Axios.get(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/students/${id}`)
         .then(res => {
           setStudent(res.data.classes);
           setLoading(false);
@@ -29,7 +29,7 @@ function TableList(props) {
     } 
 
     if (props.selected === 'books') {
-      Axios.get(`https://mockuni-api.herokuapp.com/students/${id}`)
+      Axios.get(`http://ec2-18-144-75-188.us-west-1.compute.amazonaws.com:5000/students/${id}`)
         .then(res => {
           setStudent(res.data.books);
           setLoading(false);
