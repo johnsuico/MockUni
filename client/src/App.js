@@ -38,7 +38,7 @@ function App() {
           <Route path="/classes/edit/:id">
             <EditClass />
           </Route>
-          <Route path="/books/edit/:idsdfsdf">
+          <Route path="/books/edit/:id">
             <EditBook />
           </Route>
         </Switch>
